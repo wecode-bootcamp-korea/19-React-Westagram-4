@@ -1,28 +1,28 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
-import Main from "./Pages/danbipark/Main/Main";
-import Login from "./Pages/danbipark/Login/Login";
-import Main from "./Pages/juyoungson/Main/Main";
-import Login from "./Pages/juyoungson/Login/Login";
-import Main from "./Pages/saemijung/Main/Main";
-import Login from "./Pages/saemijung/Login/Login";
-import Main from "./Pages/jinahhong/Main/Main";
-import Login from "./Pages/jinahhong/Login/Login";
+import LoginP from "./Pages/danbipark/Login/LoginP";
+import MainP from "./Pages/danbipark/Main/MainP";
+import LoginS from "./Pages/juyoungson/Login/LoginS";
+import MainS from "./Pages/juyoungson/Main/MainS";
+import LoginJ from "./Pages/saemijung/Login/LoginJ";
+import MainJ from "./Pages/saemijung/Main/MainJ";
+import LoginH from "./Pages/jinahhong/Login/LoginH";
+import MainH from "./Pages/jinahhong/Main/MainH";
+import './Styles/Reset.scss';
 
 class Routes extends Component {
   render() {
     return (
       <Router>
         <Switch>
-          <Route exact path="/login-juyoung" component={Login} />
-          <Route exact path="/main-juyoung" component={Main} />
-          <Route exact path="/login-danbipark" component={Login} />
-          <Route exact path="/main-danbipark" component={Main} />
-          <Route exact path="/login-saemijung" component={Login} />
-          <Route exact path="/main-saemijung" component={Main} />
-          <Route exact path="/login-jinahhong" component={Login} />
-          <Route exact path="/main-jinahhong" component={Main} />
+          <Route exact path="/loginS" component={LoginS} />
+          <Route exact path="/mainS" component={MainS} />
+          <Route exact path="/loginP" component={LoginP} />
+          <Route exact path="/mainP" component={MainP} />
+          <Route exact path="/loginJ" component={LoginJ} />
+          <Route exact path="/mainJ" component={MainJ} />
+          <Route exact path="/LoginH" component={LoginH} />
+          <Route exact path="/MainH" component={MainH} />
         </Switch>
       </Router>
     );
