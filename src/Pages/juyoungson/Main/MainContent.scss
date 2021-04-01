@@ -1,0 +1,24 @@
+.mainWrapper{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    background-color: #fafafa;
+}
+
+.mainBoxWrapper{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    padding-top: 30px;
+    max-width: 935px;
+}
+
+.mainBox{
+    height: 100%;
+    width: 100%;
+    max-width: 614px;
+    margin-right: 28px;
+}
+
+

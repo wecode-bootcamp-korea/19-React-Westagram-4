@@ -1,0 +1,46 @@
+$mainborderColor: #c9c9c9;
+
+.MainHead{
+    position: relative;
+    height: 118px;
+    width: 612px;
+    margin-bottom: 24px;
+    background-color: white;
+    border: 1px solid $mainborderColor;
+    overflow: hidden;
+
+    .headBox {
+        display: flex;
+        position: absolute;
+        margin: 16px 0;
+        li{
+            position: relative;
+            height: 84px;
+            width: 80px;
+
+            a{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                padding: 0 4px;
+            }
+        }
+        .headImgBox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 66px;
+            width: 66px;
+            // background-image: url("img.png");
+            background-position: center;
+            background-size: contain;
+            img{
+                height: 50px;
+                width: 50px;
+                border: 2px solid white;
+                border-radius: 70%;
+            }
+        }
+    }
+    
+}
