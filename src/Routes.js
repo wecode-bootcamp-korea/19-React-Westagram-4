@@ -8,7 +8,7 @@ import LoginJ from "./Pages/saemijung/Login/LoginJ";
 import MainJ from "./Pages/saemijung/Main/MainJ";
 import LoginH from "./Pages/jinahhong/Login/LoginH";
 import MainH from "./Pages/jinahhong/Main/MainH";
-import './Styles/Reset.scss';
+import "./Styles/Reset.scss";
 
 class Routes extends Component {
   render() {
