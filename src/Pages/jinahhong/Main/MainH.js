@@ -93,10 +93,9 @@ class MainH extends React.Component {
                 <div className="feeds_info">
                   <div className="feeds_info_icons">
                     <div className="feeds_info_icons_left">
-                      <i className="far fa-heart fa-2x" />
-                      <i className="far fa-comment fa-2x" />
+                      <i className="far fa-heart fa-2x" />&nbsp;&nbsp;&nbsp;
+                      <i className="far fa-comment fa-2x" />&nbsp;&nbsp;&nbsp;
                       <img src={dm} alt="dm img" />
-                      {/* <img src="/images/dm.png" /> */}
                     </div>
                     <div className="feeds_info_icons_right">
                       <i className="far fa-bookmark fa-2x" />
@@ -107,11 +106,11 @@ class MainH extends React.Component {
                       <img
                         src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/120210036_354790015642964_2320574806492717717_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=C8uWfvwBSf8AX_ZSfd2&ccb=7-4&oh=509ab33ed5de06eaafc8d0671d907cdb&oe=60885E95&_nc_sid=a9513d"
                         alt="like friend"
-                      />
+                      />&nbsp;&nbsp;&nbsp;
                       <b>max__walwal</b>님 외 <b>11명</b>이 좋아합니다.
                     </div>
                     <span className="feeds_info_description_user">
-                      <b>minimal__time</b>
+                      <b>minimal__time</b>&nbsp;&nbsp;
                     </span>
                     <span className="feeds_info_description_text">
                       길을 잃었다. 도와주세요!
@@ -155,7 +154,7 @@ class MainH extends React.Component {
                   <button>전환</button>
                 </article>
                 <article className="main_right_recommendation">
-                  <span>회원님을 위한 추천</span>
+                  <span>회원님을 위한 추천</span>&nbsp;&nbsp;&nbsp;
                   <button>모두 보기</button>
                   <ul className="main_right_recommendation_list">
                     <li>
