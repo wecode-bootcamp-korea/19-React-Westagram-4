@@ -26,9 +26,8 @@ class LoginJ extends Component {
     })
   }
 
-  
-
   render() {
+    console.log(this.state);
     return (
       <div className="Login_container">
         <div className="login_box">
@@ -45,7 +44,7 @@ class LoginJ extends Component {
                 <a className="forget_link" target="_blank" href="noreferrer" >비밀번호를 잊으셨나요?</a>
             </div>
         </section>
-    </div>.
+    </div>
       </div>
     );
   }
