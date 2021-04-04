@@ -1,82 +1,85 @@
-:root{
-  --light-gray:#A2A2A2;
-  }
-  .body{
-      background-color: #FAFAFA;
-      position: relative;
+$light-gray:#A2A2A2;
+
+    .body{
+    background-color: #FAFAFA;
+    position: relative;
   }
   
-  .top{
+  .top {
       width: 100vw;
       height: 54px;
       border-top: 1px solid var(--light-gray);
       border-bottom: 1px solid var(--light-gray);
       background-color: white;
       position: fixed;
+
+      .nav {
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+
+        .logo_box {
+          height: 54px;
+          /* border: 1px solid yellow; */
+          display: flex;
+          align-items: center;
+
+            .insta_logo {
+              width: 22px;
+              height: 22px;
+              margin-right: 10px;
+
+            }
+
+            .insta_txt {
+              margin-left: 10px;
+            }
+        }
+
+        .search {
+          width: 215px;
+          height: 54px;
+          /* border: 1px solid pink; */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .search_box {
+            width: 215px;
+            height: 28px;
+            border: 1px solid $light-gray;
+            border-radius: 3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .fa-search, .search_txt {
+              color: $light-gray;
+
+              &::placeholder{
+                text-align: center;
+              }
+          }
+        }
+      }
+      .right_box {
+        height: 54px;
+        width: 222px;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+        .icons {
+          width: 22px;
+          height: 22px;
+          }
+      }
+    }
   }
-  
-  .nav{
-      width: 70%;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-  }
-  
-  .logo_box{
-      height: 54px;
-      /* border: 1px solid yellow; */
-      display: flex;
-      align-items: center;
-  }
-  /* 인스타그램 아이콘 */
-  .fab{
-      padding-right: 10px;
-  }
-  /* 인스타그램 로고 */
-  .instagram_logo{
-      font-family: 'Lobster', cursive;
-      font-size: larger;
-      padding-left: 10px;
-      border-left: 2px solid var(--light-gray);
-  }
-  
-  .search{
-      width: 215px;
-      height: 54px;
-      /* border: 1px solid pink; */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  .search_box{
-      width: 215px;
-      height: 28px;
-      border: 1px solid var(--light-gray);
-      border-radius: 3px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  .fa-search, .search_txt{
-      color: var(--light-gray);
-      font-size: small;
-  }
-  
-  .right_box{
-      height: 54px;
-      width: 222px;
-      /* border: 1px solid blue; */
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-  }
-  
-  .icons{
-      width: 22px;
-      height: 22px;
-  }
-  
-  .main{
+
+  .main {
       /* border:1px solid gray; */
       height: 100vh;
       margin-left: 280px;
