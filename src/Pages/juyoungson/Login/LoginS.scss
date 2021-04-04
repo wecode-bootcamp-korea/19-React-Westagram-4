@@ -2,7 +2,15 @@ $mainColor: #fafafa;
 $mainborderColor: #c9c9c9;
 
 .Login {
-
+  @font-face {
+        font-family: NanumL;
+        src: url("../../../Styles/NanumSquareRoundL.ttf") format("truetype");
+      }
+  @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap"); 
+  
+  *{
+    font-family: 'NanumL';
+  }
   height: 100vh;
   background-color: $mainColor;
 
@@ -67,6 +75,16 @@ $mainborderColor: #c9c9c9;
         border-radius: 5px;
         color: white;
         background-color: #b2dffc;
+      }
+
+      .loginDisabled{
+        display: block;
+        width: 266px;
+        height: 32px;
+        margin-top: 5px;
+        border-radius: 5px;
+        color: white;
+        background-color: #34abeb;
       }
 
       .loginLineWrapper {
@@ -134,6 +152,7 @@ $mainborderColor: #c9c9c9;
       text-align: center;
       p {
         margin: 10px 20px 10px 20px;
+        color: #727272;
       }
       .downloadImg {
         display: flex;
