@@ -36,13 +36,19 @@
         }
 
         .login_btn {
-        margin-top: 10px;
-        background-color: #B2DFFC;
-        border: none;
-        border-radius: 5px;
-        color:white;
-        font-weight: bold;
-        font-size: 15px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            color:white;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        
+        .onColor {
+            background-color: blue;
+        }
+        .offColor {
+            background-color: #B2DFFC;
         }
 
         .forget_pw{
