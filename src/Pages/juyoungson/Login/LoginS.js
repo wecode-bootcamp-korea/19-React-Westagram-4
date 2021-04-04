@@ -43,21 +43,24 @@ class LoginS extends Component {
 
   inputValue = (e) => {
     const { id, value } = e.target;
-    this.setState({
-      [id]: value,
-    }, this.changeBtnColor);
+    this.setState(
+      {
+        [id]: value,
+      },
+      this.changeBtnColor
+    );
   };
 
   changeBtnColor = () => {
     const { inputId, inputPw } = this.state;
     inputId.indexOf("@") !== -1 && inputPw.length >= 5
       ? this.setState({
-        btnColor: "loginDisabled",
+          btnColor: "loginDisabled",
         })
       : this.setState({
-        btnColor: "loginButton",
+          btnColor: "loginButton",
         });
-  }
+  };
 
   render() {
     const { inputValue, checkInput } = this;
@@ -82,10 +85,7 @@ class LoginS extends Component {
                 value={inputPw}
                 onChange={inputValue}
               />
-              <button
-                onClick={checkInput}
-                className={btnColor}
-              >
+              <button onClick={checkInput} className={btnColor}>
                 로그인
               </button>
               <div className="loginLineWrapper">

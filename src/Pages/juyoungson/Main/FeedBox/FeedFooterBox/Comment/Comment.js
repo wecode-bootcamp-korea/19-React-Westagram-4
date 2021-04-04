@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Comment.scss"
 
 class Comment extends Component {
   deleteCommentBtn = () => {
@@ -8,7 +9,7 @@ class Comment extends Component {
   render() {
     const { commentList, deleteCommentBtn } = this.props;
     return (
-      <>
+      <div className="commentBox">
         {commentList.map((comment) => {
           return (
             <div key={comment.id}>
@@ -19,7 +20,7 @@ class Comment extends Component {
             </div>
           );
         })}
-      </>
+      </div>
     );
   }
 }

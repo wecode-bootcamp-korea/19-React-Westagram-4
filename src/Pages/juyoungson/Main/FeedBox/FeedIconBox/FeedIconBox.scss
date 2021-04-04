@@ -1,0 +1,14 @@
+.footerIconBox{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    .footerLeft, .footerRight{
+        display: flex;
+        align-items: center;
+        *{
+            height: 24px;
+            width: 24px;
+            margin: 10px;
+        }
+    }
+}

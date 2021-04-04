@@ -1,0 +1,17 @@
+.commentBox{
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+    font-size: 14px;
+    .comment{
+        display: flex;
+    }
+    .delBtn{
+        width: 14px;
+        margin-left: 10px;
+    }
+    a{
+        margin-right: 10px;
+        font-weight: 600;
+    }
+}

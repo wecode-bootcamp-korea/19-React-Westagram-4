@@ -1,0 +1,44 @@
+.feedFooterBox {
+  .likeBox {
+    height: 18px;
+    margin-bottom: 8px;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .inputCommentBox {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    padding: 0 16px;
+
+    .inputCommentForm {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      width: 100%;
+
+      .smileButton {
+        padding: 8px 16px 8px 0;
+        height: 40px;
+        width: 40px;
+        background-color: white;
+      }
+
+      .inputComment {
+        padding: 0;
+        resize: none;
+      }
+      
+      .submitButton {
+        height: 40px;
+        width: 40px;
+        background-color: white;
+        color: #b2dffc;
+        font-size: 14px;
+      }
+    }
+  }
+}

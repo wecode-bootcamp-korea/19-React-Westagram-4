@@ -1,0 +1,30 @@
+.feedHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    .feedLeftBox{
+        display: flex;
+        align-items: center;
+        height: 40px;
+        margin-left: 15px;
+        img{
+            height: 30px;
+            width: 30px;
+            border-radius: 70px;
+        }
+        a{
+            margin-left: 15px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+    }
+    .feedRightBox{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+    }
+}
