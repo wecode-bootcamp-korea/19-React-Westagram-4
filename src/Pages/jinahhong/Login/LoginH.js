@@ -6,22 +6,22 @@ class LoginH extends React.Component {
   constructor() {
   super()
     this.state = {
-      id: "",
-      pw: "",
+      idInputValue: "",
+      pwInputValue: "",
       backColor: ""
     }
   }
-  consoleID = (event) => {
+  handleIdInput = (event) => {
     this.setState({
-      id: event.target.value
-    })
-  }
+      idInputValue: `${event.target.value}`,
+    });
+  };
 
-  consolePW = (event) => {
+  handlePwInput = (event) => {
     this.setState({
-      pw: event.target.value
-    })
-  }
+      pwInputValue: `${event.target.value}`,
+    });
+  };
 
   showValue =() => {
     this.props.history.push('/main')
@@ -34,15 +34,32 @@ class LoginH extends React.Component {
             <p className="login_titleName">westagram</p>
             <div className="login_input">
               <input
-                type="text"
-                id="email_password"
-                placeholder="전화번호,사용자 이름 또는 이메일"
-                onChange={this.consoleID}/>
-              <input type="text" id="login_password" placeholder="비밀번호"
-              onChange={this.consolePW} />
+              type="text"
+              id="email_password"
+              placeholder="전화번호,사용자 이름 또는 이메일"
+              onChange={this.handleIdInput}/>
+
+              <input 
+              type="text" 
+              id="login_password" 
+              placeholder="비밀번호"
+              onChange={this.handlePwInput} />
             </div>
-            <button className="login_btn" disabled>
-              <Link to="/MainH">로그인</Link>
+            <button
+            id="login_btn"
+            className={
+              this.state.idInputValue.indexOf("@") !== -1 &&
+              this.state.pwInputValue.length > 5
+              ? "changeButtonColor"
+              : "normalButtonColor"
+            }
+            disabled={
+              this.state.idInputValue.indexOf("@") !== -1 &&
+              this.state.pwInputValue.length > 5
+                ? false
+                : true
+            }>
+              <Link to="/MainH" style={{color:'white'}}>로그인</Link>
             </button>
 
             <div className="rePassword_btn">

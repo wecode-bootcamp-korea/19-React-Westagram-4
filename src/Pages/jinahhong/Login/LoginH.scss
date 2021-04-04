@@ -37,15 +37,20 @@
   }
 }
 
-.login_btn {
+#login_btn {
   width: 262px;
   margin-top: 10px;
   height: 35px;
   font-size: 15px;
-  color: white;
-  background-color: #b2dffc;
   border: 0;
   outline: 0;
+}
+
+.changeButtonColor {
+  background-color: #244f7c;
+}
+.normalButtonColor {
+  background-color: #b2dffc;
 }
 
 .rePassword_btn {
