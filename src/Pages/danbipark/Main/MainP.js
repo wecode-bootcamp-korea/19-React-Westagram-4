@@ -19,6 +19,36 @@ import yesol_song from "../../../Images/danbipark/yesol_song.jpg";
 import ymch from "../../../Images/danbipark/ym.ch.jpg";
 
 class Main extends React.Component {
+  state = {
+    userComment: "",
+    userComments: [],
+  };
+
+  createText = (e) => {
+    this.setState({
+      userComment: e.target.value,
+    });
+  };
+
+  addText = (e) => {
+    const addTextList = this.state.userComments;
+    addTextList.push(this.state.userComment);
+    this.setState({
+      userComments: this.state.userComments,
+      userComment: "",
+    });
+  };
+
+  handleClick = (e) => {
+    this.addText();
+  };
+
+  handleEnter = (e) => {
+    if (e.key === "Enter") {
+      this.addText();
+    }
+  };
+
   render() {
     return (
       <>
@@ -40,7 +70,6 @@ class Main extends React.Component {
             </div>
           </div>
         </nav>
-
         <div className="all-container">
           <div className="main-left-container">
             <header className="stories-container">
@@ -194,10 +223,27 @@ class Main extends React.Component {
                   <strong>en_nyya_</strong>한입만🥖
                 </span>
                 <span>6시간 전</span>
-                <ul className="add-comment"></ul>
+
+                <ul className="add-comment">
+                  {this.state.userComments.map((comment) => (
+                    <li>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <strong>itssweetrain </strong>
+                      {comment}
+                    </li>
+                  ))}
+                </ul>
                 <div className="comment-container">
-                  <input type="text" className="input-comment" />
-                  <button className="upload-button">게시</button>
+                  <input
+                    type="text"
+                    className="input-comment"
+                    onChange={this.createText}
+                    onKeyPress={this.handleEnter}
+                    value={this.state.userComment}
+                  />
+                  <button className="upload-button" onClick={this.handleClick}>
+                    게시
+                  </button>
                 </div>
               </div>
             </article>

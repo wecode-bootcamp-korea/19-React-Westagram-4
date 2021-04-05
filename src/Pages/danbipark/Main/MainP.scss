@@ -266,11 +266,12 @@ body {
         display: flex;
         flex-direction: column;
         position: absolute;
-        transform: translate(120%, 40%);
+        transform: translate(110%, 40%);
       }
 
       span {
         display: block;
+        font-size: $font-size;
       }
 
       span:nth-child(2) {
