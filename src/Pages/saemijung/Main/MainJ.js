@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import Nav from "../Nav/Nav";
 import Story from "../Story/Story";
+import Comments from "./Comment/Comment";
 import "./MainJ.scss";
 
 class MainJ extends Component {
   constructor() {
     super();
     this.state = {
+      commentId: "sammy",
       comment: "",
       commentList: [],
     };
@@ -80,7 +82,8 @@ class MainJ extends Component {
                 className="comment_input"
                 onChange={this.handleChange}
                 onKeyPress={this.addCommentEnter}
-                value={this.state.value}
+                // value={this.state.value}
+                value={this.state.comment}
                 type="text"
                 placeholder="댓글을 입력하세요"
               />
@@ -90,10 +93,16 @@ class MainJ extends Component {
               <ul>
                 {this.state.commentList.map((commentText) => {
                   return (
-                    <li className="comment_list">
-                      <span className="comment_name">sammy</span>
-                      {commentText.comment}
-                    </li>
+                    // <li className="comment_list">
+                    //   <span className="comment_name">
+                    //     {this.state.commentId}
+                    //   </span>
+                    //   {commentText.comment}
+                    // </li>
+                    <Comments
+                      id={this.state.commentId}
+                      content={commentText.comment}
+                    />
                   );
                 })}
               </ul>
