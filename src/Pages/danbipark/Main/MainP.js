@@ -1,4 +1,5 @@
 import React from "react";
+import CommentComponent from "./Components/CommentComponent";
 import "./MainP.scss";
 import "../../../Styles/Common.scss";
 import "../../../Styles/Reset.scss";
@@ -225,14 +226,11 @@ class Main extends React.Component {
                 <span>6시간 전</span>
 
                 <ul className="add-comment">
-                  {this.state.userComments.map((comment) => (
-                    <li>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <strong>itssweetrain </strong>
-                      {comment}
-                    </li>
+                  {this.state.userComments.map((comment, id) => (
+                    <CommentComponent key={id} commentList={comment} />
                   ))}
                 </ul>
+
                 <div className="comment-container">
                   <input
                     type="text"
