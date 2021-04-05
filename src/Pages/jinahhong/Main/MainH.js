@@ -5,6 +5,35 @@ import cute from "../../../Images/jinahHong/cute.jpg";
 import dm from "../../../Images/jinahHong/dm.png";
 
 class MainH extends React.Component {
+    constructor() {
+    super();
+    this.state = {
+        newReply: "",
+        replies: [
+            {
+                text: "",
+            },
+        ],
+    };
+  }
+
+  textChange = (e) => {
+    this.setState({
+        newReply: e.target.value,
+    });
+  };
+
+  add = () => {
+    let arr = this.state.replies;
+    arr.push({
+        text: this.state.newReply,
+    });
+
+    this.setState({
+        replies: arr,
+        newReply: "",
+    });
+  };
   render() {
     return (
       <div>
@@ -119,10 +148,31 @@ class MainH extends React.Component {
                     <span className="feeds_info_description_day">1일 전</span>
                   </div>
                   <div className="feeds_info_comment">
+                  <div>
+
+                      <div>
+                        <ul className="textbox">
+                            {this.state.replies.map((el) => (
+                                <li>{el.text}</li>
+                            ))}
+                        </ul>
+                      </div>
+                    </div>
+                  <div className="comment_border_line">
                     <button className="feed_info_comment_emoji">
                       <i className="far fa-smile fa-2x" />
                     </button>
                     <input
+                      id = "feed_info_comment_input"
+                      type="text"
+                      placeholder="댓글달기..."
+                      onChange={this.textChange}
+                      onKeyPress={this.pressEnter}
+                      value={this.state.newReply}
+                      />
+                      <button id="feed_info_comment_submit" onClick={this.add}>게시</button>
+                  </div>
+                    {/* <input
                       type="text"
                       id="feed_info_comment_input"
                       placeholder="댓글 달기"
@@ -133,10 +183,10 @@ class MainH extends React.Component {
                       value="Send"
                     >
                       게시
-                    </button>
+                    </button> */}
                   </div>
-                  <p id="para" />
-                </div>
+                  {/* <p id="para" /> */}
+                  </div>
               </article>
             </section>
 

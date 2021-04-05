@@ -113,16 +113,31 @@
   width: 100%;
 }
 
+.feeds_info {
+  background-color: #fff;
+}
+
 .feeds_info_description {
   text-align: left;
   margin-left: 20px;
   margin-top: 15px;
 }
 
+.comment_border_line{
+  margin-top: 10px;
+  border-top: 1px solid rgba(var(--ce3,239,239,239),1);
+}
+
+.textbox {
+  margin-top: 10px;
+  text-align: left;
+  margin-left: 20px;
+}
+
 .feeds_info_icons {
   display: flex;
   justify-content: space-between;
-  margin: 15px 15px 0 15px;
+  margin: 5px 15px 0 15px;
 }
 
 .feeds_info_icons_left {
