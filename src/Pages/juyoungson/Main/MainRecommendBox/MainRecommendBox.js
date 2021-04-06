@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import "./MainRecommendBox.scss";
 import juyoung from "../../../../Images/juyoungson/juyoung.jpg";
 
@@ -7,9 +8,9 @@ class MainRecommendBox extends Component {
         return (
             <aside className="MainRecommendBox">
               <div className="recommendProfile">
-                <img className="profileImg" src={juyoung}></img>
+                <img className="profileImg" src={juyoung} alt="로그인 계정 이미지"></img>
                 <div className="profileName">
-                  <a href="">95.s.guri</a>
+                  <Link to="/mains">95.s.guri</Link>
                   <span>손주영</span>
                 </div>
                 <div className="followBox">
@@ -27,11 +28,11 @@ class MainRecommendBox extends Component {
 
               <div className="recommendedProfile">
                 <div className="recommendedImg">
-                  <img src={juyoung} alt="" />
+                  <img src={juyoung} alt="로그인 계정 이미지" />
                 </div>
 
                 <div className="profileName">
-                  <a href="">95.s.guri</a>
+                  <Link to="/mains">95.s.guri</Link>
                   <span>Instagram 신규 가입</span>
                 </div>
 

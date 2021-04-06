@@ -31,7 +31,7 @@ class MainNav extends Component {
                     src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
                     alt="더보기"
                   />
-                  <img className="profileImg" src={juyoung}></img>
+                  <img className="profileImg" src={juyoung} alt="로그인 계정 이미지"></img>
                 </div>
               </div>
             </div>

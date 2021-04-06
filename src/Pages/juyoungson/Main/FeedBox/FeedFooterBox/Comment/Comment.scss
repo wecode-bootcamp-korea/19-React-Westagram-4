@@ -1,8 +1,16 @@
-.commentBox{
+.commentWrapper{
     display: flex;
     flex-direction: column;
     padding: 0 16px;
     font-size: 14px;
+    .commentBox{
+        width: 100%;
+    }
+    div{
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
     .comment{
         display: flex;
     }

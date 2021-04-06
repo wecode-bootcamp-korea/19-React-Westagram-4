@@ -12,7 +12,7 @@
     align-items: center;
     height: 56px;
     padding: 0 16px;
-
+    border-top : 0.5px solid #c9c9c9;
     .inputCommentForm {
       display: flex;
       justify-content: center;
@@ -28,16 +28,27 @@
       }
 
       .inputComment {
-        padding: 0;
-        resize: none;
+        height: 100%;
+        width: 100%;
+        padding: 0 5px;
       }
       
-      .submitButton {
+      .submitButtonFalse {
         height: 40px;
         width: 40px;
         background-color: white;
         color: #b2dffc;
         font-size: 14px;
+        font-weight: 600;
+      }
+
+      .submitButtonTrue{
+        height: 40px;
+        width: 40px;
+        background-color: white;
+        color: #0095f6;
+        font-size: 14px;
+        font-weight: 600;
       }
     }
   }

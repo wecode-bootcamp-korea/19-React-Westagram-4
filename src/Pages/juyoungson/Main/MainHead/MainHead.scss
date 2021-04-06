@@ -25,22 +25,7 @@ $mainborderColor: #c9c9c9;
                 padding: 0 4px;
             }
         }
-        .headImgBox {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 66px;
-            width: 66px;
-            background-image: url("../../../../Images/juyoungson/img.png");
-            background-position: center;
-            background-size: contain;
-            img{
-                height: 50px;
-                width: 50px;
-                border: 2px solid white;
-                border-radius: 70%;
-            }
-        }
+
     }
     
 }

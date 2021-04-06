@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter,Link } from "react-router-dom";
 import "./LoginS.scss";
 
 import facebook from "../../../Images/juyoungson/facebook.png";
@@ -20,7 +20,7 @@ class LoginS extends Component {
     e.preventDefault();
     const { inputId, inputPw } = this.state;
     const testId = "123@123";
-    const testPw = "12345";
+    const testPw = "1234";
 
     if (inputId !== testId || inputPw !== testPw || !inputId || !inputPw) {
       alert("ID/PW를 확인해주세요");
@@ -97,26 +97,26 @@ class LoginS extends Component {
                 <img src={facebook} alt="" />
                 <span>Facebook으로 로그인</span>
               </button>
-              <a href="">비밀번호를 잊으셨나요?</a>
+              <Link to="">비밀번호를 잊으셨나요?</Link>
             </form>
           </div>
           <div className="signUp">
             <p>
               계정이 없으신가요?
-              <a href="#">
+              <Link to="#">
                 <span>가입하기</span>
-              </a>
+              </Link>
             </p>
           </div>
           <div className="download">
             <p>앱을 다운로드하세요</p>
             <div className="downloadImg">
-              <a href="#">
+              <Link to="#">
                 <img src={appstoreLogo} alt="" />
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="#">
                 <img src={googleLogo} alt="" />
-              </a>
+              </Link>
             </div>
           </div>
         </main>
@@ -124,57 +124,57 @@ class LoginS extends Component {
         <footer>
           <ul className="siteInfo">
             <li>
-              <a href="#">소개</a>
+              <Link to="#">소개</Link>
             </li>
             <li>
-              <a href="#">블로그</a>
+              <Link to="#">블로그</Link>
             </li>
             <li>
-              <a href="#">채용 정보</a>
+              <Link to="#">채용 정보</Link>
             </li>
             <li>
-              <a href="#">도움말</a>
+              <Link to="#">도움말</Link>
             </li>
             <li>
-              <a href="#">API</a>
+              <Link to="#">API</Link>
             </li>
             <li>
-              <a href="#">개인정보처리방침</a>
+              <Link to="#">개인정보처리방침</Link>
             </li>
             <li>
-              <a href="#">약관</a>
+              <Link to="#">약관</Link>
             </li>
             <li>
-              <a href="#">인기 계정</a>
+              <Link to="#">인기 계정</Link>
             </li>
             <li>
-              <a href="#">해시태그</a>
+              <Link to="#">해시태그</Link>
             </li>
             <li>
-              <a href="#">위치</a>
+              <Link to="#">위치</Link>
             </li>
           </ul>
           <ul className="siteInfo">
             <li>
-              <a href="#">뷰티</a>
+              <Link to="#">뷰티</Link>
             </li>
             <li>
-              <a href="#">댄스 및 공연</a>
+              <Link to="#">댄스 및 공연</Link>
             </li>
             <li>
-              <a href="#">피트니스</a>
+              <Link to="#">피트니스</Link>
             </li>
             <li>
-              <a href="#">식음료</a>
+              <Link to="#">식음료</Link>
             </li>
             <li>
-              <a href="#">집 및 정원</a>
+              <Link to="#">집 및 정원</Link>
             </li>
             <li>
-              <a href="#">음악</a>
+              <Link to="#">음악</Link>
             </li>
             <li>
-              <a href="#">시각 예술</a>
+              <Link to="#">시각 예술</Link>
             </li>
           </ul>
           <div className="selectLang">

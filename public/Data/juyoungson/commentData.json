@@ -1,0 +1,26 @@
+[
+    {
+        "id" : 1,
+        "uesrName" : "juyoung",
+        "value" : "안녕안ㅇ녕",
+        "isLiked" : true
+    },
+    {
+        "id" : 2,
+        "uesrName" : "jisu",
+        "value" : "뚱땡아",
+        "isLiked" : true
+    },
+    {
+        "id" : 3,
+        "uesrName" : "chihyeon",
+        "value" : "조용히해",
+        "isLiked" : true
+    },
+    {
+        "id" : 4,
+        "uesrName" : "jiwon",
+        "value" : "ㅋㅋㅋㅋㅋㅋㅋ",
+        "isLiked" : true
+    }
+]
