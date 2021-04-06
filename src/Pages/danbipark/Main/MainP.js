@@ -1,5 +1,6 @@
 import React from "react";
-import CommentComponent from "./Components/CommentComponent";
+import Comment from "./Components/Comment";
+import COMMENT from "./Components/CommentData";
 import "./MainP.scss";
 import "../../../Styles/Common.scss";
 import "../../../Styles/Reset.scss";
@@ -25,6 +26,12 @@ class Main extends React.Component {
     userComments: [],
   };
 
+  componentDidMount() {
+    this.setState({
+      userComments: COMMENT,
+    });
+  }
+
   createText = (e) => {
     this.setState({
       userComment: e.target.value,
@@ -32,10 +39,18 @@ class Main extends React.Component {
   };
 
   addText = (e) => {
-    const addTextList = this.state.userComments;
-    addTextList.push(this.state.userComment);
+    const { userComment, userComments } = this.state;
+    let addTextList = userComments;
+
     this.setState({
-      userComments: this.state.userComments,
+      userComments: [
+        ...userComments,
+        {
+          id: userComments.length + 1,
+          userName: "itssweetrain",
+          content: userComment,
+        },
+      ],
       userComment: "",
     });
   };
@@ -51,6 +66,8 @@ class Main extends React.Component {
   };
 
   render() {
+    const { userComment, userComments } = this.state;
+
     return (
       <>
         <nav className="nav-bar container">
@@ -226,8 +243,12 @@ class Main extends React.Component {
                 <span>6시간 전</span>
 
                 <ul className="add-comment">
-                  {this.state.userComments.map((comment, id) => (
-                    <CommentComponent key={id} commentList={comment} />
+                  {userComments.map((comment) => (
+                    <Comment
+                      key={comment.id}
+                      name={comment.userName}
+                      comment={comment.content}
+                    />
                   ))}
                 </ul>
 
@@ -237,7 +258,7 @@ class Main extends React.Component {
                     className="input-comment"
                     onChange={this.createText}
                     onKeyPress={this.handleEnter}
-                    value={this.state.userComment}
+                    value={userComment}
                   />
                   <button className="upload-button" onClick={this.handleClick}>
                     게시

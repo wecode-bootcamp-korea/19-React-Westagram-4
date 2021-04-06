@@ -19,15 +19,14 @@ class Login extends React.Component {
   };
 
   checkLogin = () => {
+    const { loginId, loginPw } = this.state;
     this.setState({
-      IsDisabled:
-        this.state.loginPw.length >= 5 && this.state.loginId.includes("@")
-          ? false
-          : true,
+      IsDisabled: loginPw.length >= 5 && loginId.includes("@") ? false : true,
     });
   };
 
   render() {
+    const { loginId, loginPw, IsDisabled } = this.state;
     return (
       <div className="Login">
         <div className="main-container">
@@ -37,7 +36,7 @@ class Login extends React.Component {
               <input
                 type="text"
                 id="loginId"
-                value={this.state.loginId}
+                value={loginId}
                 onChange={this.handleValueInput}
               />
               <label for="loginId">전화번호,사용자 이름 또는 이메일</label>
@@ -46,12 +45,12 @@ class Login extends React.Component {
               <input
                 type="password"
                 id="loginPw"
-                value={this.state.loginPw}
+                value={loginPw}
                 onChange={this.handleValueInput}
               />
               <label for="loginPw">비밀번호</label>
             </div>
-            <button className="login-button" disabled={this.state.IsDisabled}>
+            <button className="login-button" disabled={IsDisabled}>
               <Link to="/MainP" className="goToMain">
                 로그인
               </Link>
