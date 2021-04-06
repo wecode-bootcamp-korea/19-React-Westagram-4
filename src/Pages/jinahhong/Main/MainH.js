@@ -1,6 +1,7 @@
 import React from "react";
 import "./MainH.scss";
 import "./ResetH.scss";
+import Child from "./Child";
 import cute from "../../../Images/jinahHong/cute.jpg";
 import dm from "../../../Images/jinahHong/dm.png";
 
@@ -151,11 +152,14 @@ class MainH extends React.Component {
                   <div>
 
                       <div>
-                        <ul className="textbox">
+                        <div className="textbox">
+                          <Child commentList={this.state.replies}/>
+                        </div>
+                        {/* <ul className="textbox">
                             {this.state.replies.map((el) => (
                                 <li>{el.text}</li>
                             ))}
-                        </ul>
+                        </ul> */}
                       </div>
                     </div>
                   <div className="comment_border_line">
