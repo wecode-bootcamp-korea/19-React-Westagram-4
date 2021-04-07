@@ -1,8 +1,5 @@
 import React from "react";
 import Feed from "./Feed/Feed";
-import "./MainP.scss";
-import "../../../Styles/Common.scss";
-import "../../../Styles/Reset.scss";
 import _alesha98 from "../../../Images/danbipark/_alesha98.jpg";
 import assiaz13 from "../../../Images/danbipark/assiaz13.jpg";
 import bellyhadid from "../../../Images/danbipark/bellyhadid.jpg";
@@ -16,11 +13,12 @@ import seongjun4957 from "../../../Images/danbipark/seongjun4957.jpg";
 import ssssssuin_ from "../../../Images/danbipark/ssssssuin_.jpg";
 import yesol_song from "../../../Images/danbipark/yesol_song.jpg";
 import ymch from "../../../Images/danbipark/ym.ch.jpg";
+import "./MainP.scss";
+import "../../../Styles/Common.scss";
+import "../../../Styles/Reset.scss";
 
 class Main extends React.Component {
   state = {
-    userComment: "",
-    userCommentLists: [],
     feedLists: [],
   };
 
@@ -34,54 +32,10 @@ class Main extends React.Component {
           feedLists: data,
         });
       });
-
-    fetch("http://localhost:3001/data/CommentData.json", {
-      method: "GET",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        this.setState({
-          userCommentLists: data,
-        });
-      });
   }
 
-  createText = (e) => {
-    this.setState({
-      userComment: e.target.value,
-    });
-  };
-
-  addText = (e) => {
-    const { userComment, userCommentLists } = this.state;
-    const newCommentLists = [
-      ...userCommentLists,
-      {
-        id: userCommentLists.length + 1,
-        userName: "itssweetrain",
-        content: userComment,
-      },
-    ];
-
-    this.setState({
-      userCommentLists: newCommentLists,
-      userComment: "",
-    });
-  };
-
-  handleClick = (e) => {
-    this.addText();
-  };
-
-  handleEnter = (e) => {
-    if (e.key === "Enter") {
-      this.addText();
-    }
-  };
-
   render() {
-    const { userComment, userCommentLists, feedLists } = this.state;
-    const { addText, handleClick, handleEnter } = this;
+    const { feedLists } = this.state;
 
     return (
       <>
@@ -155,11 +109,6 @@ class Main extends React.Component {
             {feedLists.map((feed) => {
               return (
                 <Feed
-                  userCommentLists={userCommentLists}
-                  userComment={userComment}
-                  handleClick={handleClick}
-                  handleEnter={handleEnter}
-                  addText={addText}
                   key={feed.id}
                   avatarImg={feed.avatarImg}
                   userName={feed.userName}

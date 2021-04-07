@@ -2,13 +2,61 @@ import React, { Component } from "react";
 import Comment from "../Comment/Comment";
 
 class Feed extends Component {
+  state = {
+    userComment: "",
+    userCommentLists: [],
+  };
+
+  componentDidMount() {
+    fetch("http://localhost:3001/data/CommentData.json", {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          userCommentLists: data,
+        });
+      });
+  }
+
+  createText = (e) => {
+    this.setState({
+      userComment: e.target.value,
+    });
+  };
+
+  addText = () => {
+    const { userComment, userCommentLists } = this.state;
+    const newCommentLists = [
+      ...userCommentLists,
+      {
+        id: userCommentLists.length + 1,
+        userName: "itssweetrain",
+        content: userComment,
+      },
+    ];
+
+    this.setState({
+      userCommentLists: newCommentLists,
+      userComment: "",
+    });
+  };
+
+  handleClick = (e) => {
+    this.addText();
+  };
+
+  handleEnter = (e) => {
+    if (e.key === "Enter") {
+      this.addText();
+    }
+  };
+
   render() {
+    const { userComment, userCommentLists } = this.state;
+    const { handleClick, handleEnter, createText } = this;
+
     const {
-      userCommentLists,
-      userComment,
-      createText,
-      handleClick,
-      handleEnter,
       avatarImg,
       userName,
       img,
