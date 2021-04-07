@@ -14,14 +14,14 @@ class MainJ extends Component {
     super();
     this.state = {
       commentId: "sammy",
-      comment: "",
+      commentValue: "",
       commentList: [],
     };
   }
 
   handleChange = (e) => {
     this.setState({
-      comment: e.target.value,
+      commentValue: e.target.value,
     });
     console.log(this.state.comment);
   };
@@ -39,9 +39,9 @@ class MainJ extends Component {
 
     this.setState({
       commentList: commentList.concat({
-        comment: this.state.comment,
+        commentValue: this.state.commentValue,
       }),
-      comment: "",
+      commentValue: "",
     });
     // console.log(this.state.commentList);
   };
@@ -102,7 +102,7 @@ class MainJ extends Component {
                     <Comments
                       key={idx}
                       userId={this.state.commentId}
-                      content={commentText.comment}
+                      content={commentText.commentValue}
                     />
                   );
                 })}
@@ -114,7 +114,7 @@ class MainJ extends Component {
                 onChange={this.handleChange}
                 onKeyPress={this.addCommentEnter}
                 // value={this.state.value}
-                value={this.state.comment}
+                value={this.state.commentValue}
                 type="text"
                 placeholder="댓글을 입력하세요"
               />
