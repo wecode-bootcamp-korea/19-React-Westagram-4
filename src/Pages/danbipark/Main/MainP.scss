@@ -1,0 +1,343 @@
+@import url(https://fonts.googleapis.com/css2?family=Lobster&display=swap);
+@import url(https://use.fontawesome.com/releases/v5.15.3/css/all.css);
+@import "../../../Styles/Common.scss";
+@import "../../../Styles/Reset.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+$color-lightgray: #fafafa;
+$color-midgray: #a5a3a3;
+$color-darkgray: #3a3a3a;
+$color-border: #e0e0e0;
+$color-text-add: #8e8e8e;
+$color-hashtag: #00376b;
+$color-action: #0095f6;
+
+$avtar-size: 36px;
+$avatar-my-size: 66px;
+$avatar-friends: 32px;
+$avatar-padding: 16px;
+
+$font-size: 14px;
+$font-padding: 4px;
+
+body {
+  background-color: $color-lightgray;
+  margin: 0;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 54px;
+  font-family: "Lobster", cursive;
+  border-bottom: 1px solid $color-border;
+  background-color: white;
+
+  .container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .fa-search {
+      font-size: 15px;
+      color: &color-midgray;
+    }
+  }
+
+  .insta-text {
+    font-size: 24px;
+    margin-left: 15px;
+  }
+
+  .fa-instagram,
+  .far {
+    font-size: 24px;
+    margin-left: 25px;
+    color: $color-darkgray;
+  }
+
+  .search-bar {
+    width: 215px;
+    height: 28px;
+    background-color: $color-lightgray;
+    border: 0.5px solid $color-border;
+    border-radius: 2px;
+  }
+
+  .search-bar:focus {
+    outline: none;
+  }
+
+  .search-text,
+  .fa-search {
+    display: flex;
+    transform: translate(-600%);
+    color: $color-midgray;
+    font-size: $font-size;
+  }
+}
+
+.all-container {
+  display: flex;
+  justify-content: space-between;
+  width: 935px;
+  margin: 35px auto;
+
+  .stories-container {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    height: 116px;
+    background-color: white;
+    border: 0.5px solid $color-border;
+    padding: 16px 0;
+    margin-bottom: 30px;
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .img-border {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      span {
+        text-align: center;
+        margin-top: 5px;
+        font-size: $font-size * 0.9;
+        color: $color-darkgray;
+      }
+    }
+
+    img {
+      width: $avatar-my-size;
+      height: $avatar-my-size;
+      border-radius: 50%;
+
+      box-shadow: inset 0 0 0 2px #fff;
+      padding: 1.5px;
+      border: 2.9px solid transparent;
+      background: linear-gradient(45deg, #c63b90, #f39b49);
+    }
+  }
+
+  .main-container {
+    width: 600px;
+    background-color: white;
+    border: 0.5px solid $color-border;
+
+    header {
+      display: flex;
+      justify-content: space-between;
+
+      .user-info {
+        display: flex;
+        align-items: center;
+        padding: $avatar-padding;
+
+        div {
+          font-weight: bold;
+          margin-left: 15px;
+        }
+
+        .user-avatar {
+          width: $avtar-size;
+          height: $avtar-size;
+          border-radius: 50%;
+        }
+      }
+
+      .more-btn {
+        display: flex;
+        align-items: center;
+        padding: $avatar-padding;
+
+        svg {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .user-feed {
+      width: 600px;
+      height: 600px;
+    }
+
+    .user-react {
+      display: flex;
+      padding: $avatar-padding;
+
+      svg {
+        margin-right: 10px;
+      }
+
+      .icon-storage {
+        margin-left: auto;
+      }
+    }
+
+    .user-comment {
+      span {
+        display: block;
+        font-size: $font-size;
+        padding-left: $avatar-padding;
+        padding-bottom: $font-padding;
+      }
+
+      span:nth-child(1) {
+        padding-bottom: 10px;
+      }
+
+      span:nth-child(3) {
+        color: $color-hashtag;
+      }
+
+      span:nth-child(4) {
+        color: $color-text-add;
+      }
+
+      span:nth-child(7) {
+        font-size: $font-size * 0.5;
+        color: $color-text-add;
+      }
+
+      ul li {
+        height: 22.5px;
+      }
+
+      .comment-container {
+        position: relative;
+        display: flex;
+
+        .input-comment {
+          position: relative;
+          width: 598px;
+          height: 56px;
+          font-size: $font-size;
+          outline: none;
+          border: none;
+          border-top: 1px solid $color-border;
+        }
+
+        .upload-button {
+          position: absolute;
+          top: 50%;
+          margin-top: -8px;
+          right: $avatar-padding;
+          border: none;
+          background-color: transparent;
+          color: $color-action;
+          cursor: pointer;
+        }
+
+        .upload-button:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+  .main-right-container {
+    width: 293px;
+    margin-left: 20px;
+
+    .my-info {
+      width: 293px;
+      height: 90px;
+      display: flex;
+      position: relative;
+
+      img {
+        width: $avatar-my-size;
+        height: $avatar-my-size;
+        border-radius: 50%;
+      }
+
+      .my-info-spec {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        transform: translate(110%, 40%);
+      }
+
+      span {
+        display: block;
+        font-size: $font-size;
+      }
+
+      span:nth-child(2) {
+        color: $color-text-add;
+      }
+    }
+
+    .friends-list {
+      position: relative;
+
+      img {
+        width: $avatar-friends;
+        height: $avatar-friends;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+
+        .friends-info {
+          display: flex;
+          margin-top: 10px;
+
+          .friends-info-spec {
+            display: flex;
+            flex-direction: column;
+
+            .add-info {
+              display: block;
+              font-size: $font-size * 0.9;
+              color: $color-text-add;
+            }
+          }
+
+          span:nth-child(3) {
+            position: absolute;
+            right: 0;
+            font-size: $font-size * 0.8;
+            color: $color-action;
+          }
+        }
+      }
+    }
+  }
+}
+
+.del-btn {
+  position: absolute;
+  right: $avatar-padding;
+  border: none;
+  outline: none;
+  background-color: white;
+  color: $color-action;
+  font-size: $font-size * 0.8;
+  cursor: pointer;
+}
+
+.like-btn {
+  position: absolute;
+  right: $avatar-padding * 3;
+  border: none;
+  outline: none;
+  background-color: white;
+  color: $color-action;
+  font-size: $font-size * 0.8;
+  cursor: pointer;
+}

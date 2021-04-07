@@ -1,0 +1,140 @@
+@import url(https://fonts.googleapis.com/css2?family=Lobster&display=swap);
+@import "../../../Styles/Common.scss";
+@import "../../../Styles/Reset.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+$color-lightgray: #fafafa;
+$color-midgray: #a5a3a3;
+$color-darkgray: #3a3a3a;
+$color-border: #e0e0e0;
+$color-text-add: #8e8e8e;
+$color-hashtag: #00376b;
+$color-action: #0095f6;
+
+$avtar-size: 36px;
+$avatar-my-size: 66px;
+$avatar-friends: 32px;
+$avatar-padding: 16px;
+
+$font-size: 14px;
+$font-padding: 4px;
+
+body {
+  background-color: $color-lightgray;
+  margin: 0;
+}
+
+.Login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $color-lightgray;
+
+  .main-container {
+    width: 350px;
+    height: 380px;
+    border: 1px solid #dbdbdb;
+    background-color: white;
+
+    header {
+      font-family: "Lobster", cursive;
+      font-size: 40px;
+      text-align: center;
+      margin: 30px;
+      margin-bottom: 35px;
+    }
+
+    .input-container {
+      text-align: center;
+
+      input {
+        width: 268px;
+        height: 38px;
+        border: 1px solid #dbdbdb;
+        background-color: $color-lightgray;
+        border-radius: 4px;
+        margin: 5px;
+        text-indent: 7px;
+      }
+
+      .id-container {
+        position: relative;
+
+        label {
+          position: absolute;
+          left: 50px;
+          bottom: 15px;
+          font-size: 13px;
+          color: #8e8e8e;
+        }
+      }
+
+      .password-container {
+        position: relative;
+
+        label {
+          position: absolute;
+          left: 50px;
+          bottom: 15px;
+          font-size: 13px;
+          color: #8e8e8e;
+        }
+      }
+
+      .login-button {
+        width: 268px;
+        height: 38px;
+        background-color: #2f95f6;
+        border: none;
+        outline: none;
+        border-radius: 4px;
+        margin: 10px;
+        color: white;
+
+        &:disabled {
+          background-color: #b2dffb;
+        }
+
+        .goToMain {
+          text-decoration: none;
+          color: $color-lightgray;
+        }
+      }
+
+      .login-button:hover {
+        cursor: pointer;
+      }
+
+      footer {
+        font-size: 13px;
+        color: #083669;
+        line-height: 10;
+      }
+
+      footer:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.label-moving {
+  transform: scale(0.8) translate(-13%, -80%);
+  transition: 0.1s ease-in-out;
+}
+
+.input-padding {
+  padding-top: 17px;
+}
+
+.currentColor {
+  background-color: #b2dffb;
+}
+
+.changeColor {
+  background-color: #2f95f6;
+}
