@@ -1,127 +1,108 @@
 $light-gray: #A2A2A2;
+  
+  .Main_container {
 
-  .body {
-    background-color: #FAFAFA;
-    position: relative;
-  }
-  
-  .main {
-    /* border:1px solid gray; */
-    height: 100vh;
-    margin-left: 280px;
-    margin-right: 280px;
-    padding-top: 54px;
-  }
-  
-  .feeds {
-    padding-top: 24px;
-    width: 615px;
-    border: 1px solid red;
-    float: left;
-    margin-right: 28px;
-  }
-  
-  .main_right {
-    border: 1px solid gray;
-    max-width: 293px;
-    width: 665px;
-    position: fixed;
-    margin-left: 665px;
-    padding-left: 28px;
-  }
-  
-  .story {
-    border: 1px solid $light-gray;
-    width: 614px;
-    height: 118px;
-    padding: 16px;
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-  }
-  
-  ul {
-    list-style: none;
-    display: flex;
-    flex-flow: row;
-  }
-  
-  .story_list {
-    /* border:1px solid gray; */
-    width: 66px;
-    height: 86px;
-    padding: 4px;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-  }
-  
-  .story_img {
-    width: 55px;
-    height: 55px;
-    border-radius: 70%;
-    overflow: hidden;
-  }
-  
-  .user_name {
-    font-size: small;
-    color: black;
-  }
-  
-  .article {
-    border: 1px solid $light-gray;
-  }
-  
-  .feed_top {
-    border: 1px solid $light-gray;
-    height: 60px;
-    padding: 16px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .feed_profile_img {
-    width: 32px;
-    height: 32px;
-    border-radius: 70%;
-    overflow: hidden;
-  }
-  
-  .feed_profile_name {
-    font-size: small;
-    font-weight: bolder;
-    padding-left: 14px;
-  }
-  
-  .feed_img {
-    width: 614px;
-    height: 614px;
-  }
-  
-  .comment {
-    border: 1px solid blue;
-    height: 100vh;
+    .main {
+      /* border:1px solid gray; */
+      height: 100vh;
+      margin-left: 280px;
+      margin-right: 280px;
+      padding-top: 54px;
+      position: relative;
 
-    .comment_input{
-        width: 80%;
-    }
-    .comment_btn{
-      background-color: white;
-      color: #B4E0FC;
-      font-weight: bold;
-    }
-    ul{
-      display: flex;
-      flex-direction: column;
+      .feeds {
+        padding-top: 24px;
+        width: 615px;
+        height: 850px;
+        border: 1px solid $light-gray;
+        float: left;
+        margin-right: 28px;
 
-      .comment_list{
-        margin-left: 30px;
+        .article {
+          border: 1px solid $light-gray;
 
-        .comment_name{
-          margin-right: 5px;
-          font-weight: bold;
+          .feed_top {
+            border: 1px solid $light-gray;
+            height: 20px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+
+            .feed_profile_img {
+              width: 32px;
+              height: 32px;
+              border-radius: 70%;
+              overflow: hidden;
+            }
+            .feed_profile_name {
+              font-size: small;
+              font-weight: bolder;
+              padding-left: 14px;
+            } 
+          }
+
+          .feed_img_box{
+
+            .feed_img {
+              width: 614px;
+              height: 614px;
+            }
+          }
+        }
+
+        .left_box{
+          display: flex;
+          justify-content: space-between;
+          .btn_left{
+            
+            .like{
+
+              .icons{
+                width: 30px;
+                height: 30px;
+                padding: 8px;
+                background-color: white;
+              }
+            }
+
+            .comment_add{
+              .icons{
+                width: 30px;
+                height: 30px;
+                padding: 8px;
+                background-color: white;
+              }
+            }
+            
+            .share{
+              .icons{
+                width: 30px;
+                height: 30px;
+                padding: 8px;
+                background-color: white;
+              }
+            }
+          }
+          .bookmark{
+            width: 35px;
+            height: 35px;
+            padding: 8px;
+            background-color: white;
+          }
+        }
+
+        .like_people{
+
+          .like_text{}
         }
       }
-    }
-    
+      .main_right {
+        border: 1px solid gray;
+        max-width: 293px;
+        width: 665px;
+        // position: fixed;
+        margin-left: 665px;
+        padding-left: 28px;
+      }
+    }  
   }

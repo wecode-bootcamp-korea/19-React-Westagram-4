@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import Nav from "../Nav/Nav";
 import Story from "../Story/Story";
 import Comments from "./Comment/Comment";
+import imgHeart from "../Images/heart.png";
+import imgD from "../Images/dm.png";
+import imgS from "../Images/speech.png";
+import imgB from "../Images/bookmark.png";
+
 import "./MainJ.scss";
 
 class MainJ extends Component {
@@ -28,14 +33,17 @@ class MainJ extends Component {
   };
 
   handleComment = () => {
-    let comments = this.state.commentList;
+    let commentList = this.state.commentList;
+    // console.log(comments);
+    // const { commentList } = this.state;
+
     this.setState({
-      commentList: comments.concat({
+      commentList: commentList.concat({
         comment: this.state.comment,
       }),
       comment: "",
     });
-    console.log(this.state.commentList);
+    // console.log(this.state.commentList);
   };
 
   render() {
@@ -43,8 +51,8 @@ class MainJ extends Component {
       <div className="Main_container">
         <Nav />
         <section className="main">
+          <Story />
           <div className="feeds">
-            <Story />
             <article className="article">
               <div className="feed_top">
                 <img
@@ -62,22 +70,45 @@ class MainJ extends Component {
                 />
               </div>
             </article>
-            <section className="section_left_box">
-              <div className="section_btn_left">
-                <button className="like"></button>
-                <button className="comment_add"></button>
-                <button className="share"></button>
+            <section className="left_box">
+              <div className="btn_left">
+                <button className="like">
+                  <img className="icons" src={imgHeart} alt="하트" />
+                </button>
+                <button className="comment_add">
+                  <img className="icons" src={imgS} alt="코멘트" />
+                </button>
+                <button className="share">
+                  <img className="icons" src={imgD} alt="DM" />
+                </button>
               </div>
-              <button className="bookmark"></button>
+              <button className="bookmark">
+                <img className="icons" src={imgB} alt="북마크" />
+              </button>
             </section>
             <section className="like_people">
               <span className="like_text"></span>
             </section>
             <section className="comment">
-              <span className="comment_name">sammy</span>
-              <span className="comment_text">
-                레몬 파운드 케이크 맛있겠다..
-              </span>
+              <div className="mock_comment">
+                <span className="comment_name">sammy</span>
+                <span className="comment_text">
+                  레몬 파운드 케이크 맛있겠다..
+                </span>
+              </div>
+              <ul>
+                {this.state.commentList.map((commentText, idx) => {
+                  return (
+                    <Comments
+                      key={idx}
+                      userId={this.state.commentId}
+                      content={commentText.comment}
+                    />
+                  );
+                })}
+              </ul>
+            </section>
+            <div className="comment_add">
               <input
                 className="comment_input"
                 onChange={this.handleChange}
@@ -90,23 +121,7 @@ class MainJ extends Component {
               <button className="comment_btn" onClick={this.handleComment}>
                 게시
               </button>
-              <ul>
-                {this.state.commentList.map((commentText) => {
-                  return (
-                    // <li className="comment_list">
-                    //   <span className="comment_name">
-                    //     {this.state.commentId}
-                    //   </span>
-                    //   {commentText.comment}
-                    // </li>
-                    <Comments
-                      id={this.state.commentId}
-                      content={commentText.comment}
-                    />
-                  );
-                })}
-              </ul>
-            </section>
+            </div>
           </div>
           <div className="main_right">
             <div className="profile_right">

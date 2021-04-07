@@ -6,8 +6,8 @@ class Comments extends Component {
     // console.log("props content:" + this.props.content);
     // console.log("props id:" + this.props.id);
     return (
-      <li className="comment_list">
-        <span className="comment_name">{this.props.id}</span>
+      <li key={this.props.key} className="comment_list">
+        <span className="comment_name">{this.props.userId}</span>
         {this.props.content}
       </li>
     );

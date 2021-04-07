@@ -12,23 +12,40 @@ class LoginJ extends Component {
     };
   }
 
+  handleInput = (e) => {
+    const { className } = e.target;
+    const { value } = e.target;
+
+    this.setState({
+      [className]: value,
+    });
+  };
+
   goTomain = () => {
-    this.props.history.push("/MainJ");
+    fetch("http://10.58.3.99:8000/users/signin", {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.idInputData,
+        password: this.state.pwInputData,
+        // phonenumber: "01011112222",
+        // username: "펭수",
+        // name: "김펭수",
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("결과 :", data);
+        localStorage.setItem("token", data.access_token);
+        if (data["MESSAGE"] === "SUCESS") {
+          alert("로그인 성공!");
+          this.props.history.push("/MainJ");
+        } else {
+          alert("로그인에 일치하지 않습니다!");
+        }
+      });
+    // .then((result) => console.log("결과 :", result));
   };
 
-  handleIdInput = (event) => {
-    // console.log(event.target.value);
-    this.setState({
-      idInputData: event.target.value,
-    });
-  };
-
-  handlePwInput = (event) => {
-    // console.log(event.target.value);
-    this.setState({
-      pwInputData: event.target.value,
-    });
-  };
   btnChangeColor = () => {
     this.state.idInputData.includes("@") && this.state.pwInputData.length >= 5
       ? this.setState({ btnColorState: true })
@@ -37,7 +54,7 @@ class LoginJ extends Component {
 
   render() {
     // console.log(this.state.);
-    console.log("btnColorState:" + this.state.btnColorState);
+    // console.log("btnColorState:" + this.state.btnColorState);
     return (
       <div className="Login_container">
         <div className="login_box">
@@ -46,19 +63,19 @@ class LoginJ extends Component {
           </div>
           <section className="login_form">
             <input
-              className="login_id"
-              onChange={this.handleIdInput}
+              className="idInputData"
+              onChange={this.handleInput}
               onKeyUp={this.btnChangeColor}
               type="text"
               placeholder="전화번호,사용자 이름 또는 이메일"
             />
             <input
-              className="login_pw"
-              onChange={this.handlePwInput}
+              className="pwInputData"
+              onChange={this.handleInput}
               onKeyUp={this.btnChangeColor}
               type="text"
               placeholder="비밀번호"
-            />
+            />{" "}
             {/* <Link to ="/main"> */}
             <button
               className={

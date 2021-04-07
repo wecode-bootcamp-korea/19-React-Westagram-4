@@ -1,0 +1,38 @@
+@import "../../../../Styles/Reset.scss";
+
+.comment {
+  border: 1px solid black;
+  height: 100px;
+
+  ul{
+    display: flex;
+    flex-direction: column;
+
+    .comment_list{
+      
+      margin-left: 30px;
+      .mock_comment{
+        padding-left: 15px;
+        .comment_name{
+          color: black;
+          font-weight:bolder;
+          }
+        }
+      }
+      
+  }
+}
+
+.comment_add{
+  
+.comment_input {
+  width: 90%;
+  
+}
+.comment_btn {
+padding-left: 15px;
+background-color: white;
+color: #B4E0FC;
+font-weight: bold;
+}
+}
