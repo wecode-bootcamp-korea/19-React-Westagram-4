@@ -9,22 +9,34 @@ import imgS from "../Images/speech.png";
 import imgB from "../Images/bookmark.png";
 
 import "./MainJ.scss";
-import COMMENT from "./Comment/commentData";
+// import COMMENT from "./Comment/commentData";
 
 class MainJ extends Component {
   constructor() {
     super();
     this.state = {
-      // commentId: "sammy",
+      commentId: "sammy",
       commentValue: "",
       commentList: [],
     };
   }
 
+  // componentDidMount() {
+  //   this.setState({
+  //     commentList: COMMENT,
+  //   });
+  // }
+
   componentDidMount() {
-    this.setState({
-      commentList: COMMENT,
-    });
+    fetch("http://localhost:3000/data/commentData.json", {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          commentList: data,
+        });
+      });
   }
 
   handleChange = (e) => {
@@ -54,7 +66,7 @@ class MainJ extends Component {
         ...commentList,
         {
           id: commentList.length + 1,
-          userName: "wecode",
+          userName: "sammy",
           content: commentValue,
           isLiked: false,
         },
@@ -126,17 +138,18 @@ class MainJ extends Component {
                   );
                 })}
               </ul>
-              <ul>
+              {/* <ul>
                 {this.state.commentList.map((commentText, idx) => {
                   return (
                     <Comments
+                      key={idx}
                       id={idx}
                       userId={this.state.commentId}
-                      content={commentText.commentValue}
+                      content={commentText.content}
                     />
                   );
                 })}
-              </ul>
+              </ul> */}
             </section>
             <div className="comment_add">
               <input
@@ -148,7 +161,7 @@ class MainJ extends Component {
                 type="text"
                 placeholder="댓글을 입력하세요"
               />
-              <button className="comment_btn" onClick={this.handleComment}>
+              <button className="comment_btn" onClick={this.addComment}>
                 게시
               </button>
             </div>
