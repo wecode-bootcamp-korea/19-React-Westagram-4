@@ -3,12 +3,14 @@ import "./Comment.scss";
 
 class Comment extends Component {
   render() {
+    const { key, name, comment } = this.props;
+
     return (
       <>
         <li className="comment">
-          {this.props.key}
-          <strong>{this.props.name}</strong>
-          &nbsp;{this.props.comment}
+          {key}
+          <strong>{name}</strong>
+          &nbsp;{comment}
         </li>
       </>
     );
