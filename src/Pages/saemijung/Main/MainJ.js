@@ -1,46 +1,64 @@
 import React, { Component } from "react";
 import Nav from "../Nav/Nav";
 import Story from "../Story/Story";
-import Comments from "./Comment/Comment";
+import Comments from "./Comment/Comments";
+import CommentList from "./Comment/CommentList";
 import imgHeart from "../Images/heart.png";
 import imgD from "../Images/dm.png";
 import imgS from "../Images/speech.png";
 import imgB from "../Images/bookmark.png";
 
 import "./MainJ.scss";
+import COMMENT from "./Comment/commentData";
 
 class MainJ extends Component {
   constructor() {
     super();
     this.state = {
-      commentId: "sammy",
+      // commentId: "sammy",
       commentValue: "",
       commentList: [],
     };
+  }
+
+  componentDidMount() {
+    this.setState({
+      commentList: COMMENT,
+    });
   }
 
   handleChange = (e) => {
     this.setState({
       commentValue: e.target.value,
     });
-    console.log(this.state.comment);
+    // console.log(this.state.commentValue);
   };
 
   addCommentEnter = (e) => {
     if (e.key === "Enter") {
-      this.handleComment();
+      this.addComment();
     }
   };
 
-  handleComment = () => {
-    let commentList = this.state.commentList;
+  addComment = () => {
+    // let commentList = this.state.commentList;
     // console.log(comments);
-    // const { commentList } = this.state;
+    const { commentList, commentValue } = this.state;
 
     this.setState({
-      commentList: commentList.concat({
-        commentValue: this.state.commentValue,
-      }),
+      // commentList: commentList.concat({
+      //   commentValue: this.state.commentValue,
+      // }),
+      // commentValue: "",
+      commentList: [
+        ...commentList,
+        {
+          id: commentList.length + 1,
+          userName: "wecode",
+          content: commentValue,
+          isLiked: false,
+        },
+      ],
       commentValue: "",
     });
     // console.log(this.state.commentList);
@@ -97,10 +115,22 @@ class MainJ extends Component {
                 </span>
               </div>
               <ul>
+                {this.state.commentList.map((comment) => {
+                  return (
+                    <CommentList
+                      key={comment.id}
+                      clickEvent={this.changeColor}
+                      name={comment.userName}
+                      comment={comment.content}
+                    />
+                  );
+                })}
+              </ul>
+              <ul>
                 {this.state.commentList.map((commentText, idx) => {
                   return (
                     <Comments
-                      key={idx}
+                      id={idx}
                       userId={this.state.commentId}
                       content={commentText.commentValue}
                     />
