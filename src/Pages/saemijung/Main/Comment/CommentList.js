@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Comment.scss";
 
 class CommentList extends Component {
   render() {
@@ -6,7 +7,7 @@ class CommentList extends Component {
     return (
       <li id={this.props.key} className="comment_list">
         <span className="comment_name">{this.props.name}</span>
-        {this.props.comment}
+        <span>{this.props.comment}</span>
       </li>
     );
   }

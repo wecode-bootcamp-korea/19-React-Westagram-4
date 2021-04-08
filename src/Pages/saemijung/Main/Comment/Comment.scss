@@ -1,36 +1,16 @@
-@import "../../../../Styles/Reset.scss";
+// @import "../../../../Styles/Reset.scss";
 
-.comment {
-  border: 1px solid black;
-  // height: 100px;
-  padding-left: 15px;
+.comment_list{
+  display: flex;
+  flex-direction: row;
 
-  ul{
-    display: flex;
-    flex-direction: column;
-
-    .comment_list{
+  .comment_name{
+    color: black;
+    font-weight:bolder;
+    margin-right: 5px;
+  }
+}
+    
       
-        .comment_name{
-          color: black;
-          font-weight:bolder;
-          margin-right: 5px;
-          }
-        }
-    }
-      
-}
 
-.comment_add{
-  
-.comment_input {
-  width: 90%;
-  
-}
-.comment_btn {
-padding-left: 15px;
-background-color: white;
-color: #B4E0FC;
-font-weight: bold;
-}
-}
+
