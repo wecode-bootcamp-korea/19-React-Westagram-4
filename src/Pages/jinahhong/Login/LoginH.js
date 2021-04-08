@@ -2,30 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./LoginH.scss";
 
+
+
 class LoginH extends React.Component {
   constructor() {
   super()
     this.state = {
       idInputValue: "",
       pwInputValue: "",
-      backColor: ""
+      checkValidation: false,
     }
   }
-  // handleIdInput = (event) => {
-  //   this.setState({
-  //     idInputValue: `${event.target.value}`,
-  //   });
-  // };
-
-  // handlePwInput = (event) => {
-  //   this.setState({
-  //     pwInputValue: `${event.target.value}`,
-  //   }); 
-  // };
+  
+  
   
   handleInput = (e) => {
-    const{ className } = e.target;
-    const { value } =e.target;
+    const{ className, value } = e.target;
     className === "email_password"
       ? this.setState({
         idInputValue: value,
@@ -35,10 +27,6 @@ class LoginH extends React.Component {
       });
   }
 
-
-  showValue =() => {
-    this.props.history.push('/main')
-  }
 
     goTomain = () => {
       // console.log("클릭")
@@ -69,6 +57,7 @@ class LoginH extends React.Component {
 
     
   render() {
+    const isBtnAble =  this.state.idInputValue.indexOf("@") !== -1 && this.state.pwInputValue.length > 5
     return (
       <section>
         <div className="login_body">
@@ -87,21 +76,11 @@ class LoginH extends React.Component {
               placeholder="비밀번호"
               onChange={this.handlePwInput} />
             </div>
+            
             <button
             onClick={this.goTomain}
             id="login_btn"
-            // className={
-            //   this.state.idInputValue.indexOf("@",".") !== -1 &&
-            //   this.state.pwInputValue.length > 8
-            //   ? "changeButtonColor"
-            //   : "normalButtonColor"
-            // }
-            // disabled={
-            //   this.state.idInputValue.indexOf("@",".") !== -1 &&
-            //   this.state.pwInputValue.length > 8
-            //     ? false
-            //     : true
-            // }
+            className={isBtnAble ? 'changeButtonColor' : 'normalButtonColor'}
             >
               <Link to="/MainH" style={{color:'white'}}>로그인</Link>
               {/* 로그인 */}
@@ -119,3 +98,4 @@ class LoginH extends React.Component {
 }
 
 export default LoginH;
+
