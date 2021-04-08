@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import MainP from "./Pages/danbipark/Main/MainP";
 import LoginP from "./Pages/danbipark/Login/LoginP";
-import MainS from "./Pages/juyoungson/Main/MainS";
+import MainP from "./Pages/danbipark/Main/MainP";
 import LoginS from "./Pages/juyoungson/Login/LoginS";
-import MainJ from "./Pages/saemijung/Main/MainJ";
+import MainS from "./Pages/juyoungson/Main/MainS";
 import LoginJ from "./Pages/saemijung/Login/LoginJ";
-import MainH from "./Pages/jinahhong/Main/MainH";
+import MainJ from "./Pages/saemijung/Main/MainJ";
 import LoginH from "./Pages/jinahhong/Login/LoginH";
+import MainH from "./Pages/jinahhong/Main/MainH";
 import './Styles/Reset.scss';
 
 class Routes extends Component {

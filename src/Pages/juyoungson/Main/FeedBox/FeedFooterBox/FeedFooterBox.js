@@ -1,7 +1,7 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Comment from "./Comment/Comment";
 import "./FeedFooterBox.scss";
-import { Link } from "react-router-dom";
 
 class FeedFooterBox extends Component {
   constructor(props) {
@@ -48,8 +48,6 @@ class FeedFooterBox extends Component {
         value: "",
       });
     }
-    console.log(commentList)
-    console.log(commentList.length)
   };
 
   deleteCommentBtn = (commentId) => {

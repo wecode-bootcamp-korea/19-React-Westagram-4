@@ -6,6 +6,7 @@ import MainRecommendBox from "./MainRecommendBox/MainRecommendBox";
 import "./MainS.scss";
 
 class MainS extends Component {
+
   render() {
     return (
       <>

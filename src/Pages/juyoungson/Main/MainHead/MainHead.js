@@ -5,7 +5,7 @@ import "./MainHead.scss"
 class MainHead extends Component {
   render() {
     return (
-      <nav className="MainHead">
+      <nav className="mainHead">
         <ul className="headBox">
           <HeadImgList/>
         </ul>

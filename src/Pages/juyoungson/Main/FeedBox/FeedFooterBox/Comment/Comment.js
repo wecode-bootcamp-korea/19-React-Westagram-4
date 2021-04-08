@@ -16,17 +16,20 @@ class Comment extends Component {
     return (
       <div className="commentWrapper">
         {commentList.map((comment) => {
+          const { id, userName, value, isLiked } = comment;
+          console.log(comment)
           return (
-            <div className="commentBox">
-              <div key={comment.id}>
-                <Link to="/mains">{`${comment.uesrName}`}</Link>
-                <span>{`${comment.value}`}</span>
+
+            <div className="commentBox" key={id}>
+              <div >
+                <Link to="/mains">{userName}</Link>
+                <span>{value}</span>
               </div>
               <i
-                className={comment.isLiked ? "far fa-heart" : "fas fa-heart"}
-                onClick={() => chgLikeColor(comment.id)}
+                className={isLiked ? "far fa-heart" : "fas fa-heart"}
+                onClick={() => chgLikeColor(id)}
               ></i>
-              <button onClick={() => deleteCommentBtn(comment.id)}>
+              <button onClick={() => deleteCommentBtn(id)}>
                 <i className="fas fa-trash"></i>
               </button>
             </div>

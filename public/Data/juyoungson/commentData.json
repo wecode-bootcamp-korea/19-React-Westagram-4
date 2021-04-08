@@ -1,25 +1,25 @@
 [
     {
         "id" : 1,
-        "uesrName" : "juyoung",
+        "userName" : "juyoung",
         "value" : "안녕안ㅇ녕",
         "isLiked" : true
     },
     {
         "id" : 2,
-        "uesrName" : "jisu",
+        "userName" : "jisu",
         "value" : "뚱땡아",
         "isLiked" : true
     },
     {
         "id" : 3,
-        "uesrName" : "chihyeon",
+        "userName" : "chihyeon",
         "value" : "조용히해",
         "isLiked" : true
     },
     {
         "id" : 4,
-        "uesrName" : "jiwon",
+        "userName" : "jiwon",
         "value" : "ㅋㅋㅋㅋㅋㅋㅋ",
         "isLiked" : true
     }

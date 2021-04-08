@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "./FeedImgBox.scss";
-import feedCat from "../../../../../Images/juyoungson/cat.jpg";
 
 class FeedImgBox extends Component {
   render() {
+    const { feedImg } = this.props;
     return (
       <div className="feedImgBox">
-        <img src={feedCat} alt="" />
+        <img src={feedImg} alt="" />
       </div>
     );
   }

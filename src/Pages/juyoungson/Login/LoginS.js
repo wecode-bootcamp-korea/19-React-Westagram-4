@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter,Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import "./LoginS.scss";
 
 import facebook from "../../../Images/juyoungson/facebook.png";
@@ -13,32 +13,36 @@ class LoginS extends Component {
       inputId: "",
       inputPw: "",
       btnColor: "loginButton",
+      languageList: [],
+      siteInfoList: [],
     };
   }
 
   checkInput = (e) => {
     e.preventDefault();
     const { inputId, inputPw } = this.state;
-    const testId = "123@123";
-    const testPw = "1234";
+    fetch("http://10.58.5.21:8000/users/sign_in", {
+      method: "POST",
+      body: JSON.stringify({
+        email: inputId,
+        password: inputPw,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.MESSAGE === "INVALID EMAIL") {
+          alert("e-mail형식으로 입력해주세요");
+        }
 
-    if (inputId !== testId || inputPw !== testPw || !inputId || !inputPw) {
-      alert("ID/PW를 확인해주세요");
-      return;
-    }
+        if (data.MESSAGE === "INVALID PASSWORD") {
+          alert("pw를 5글자 이상 입력해주세요");
+        }
 
-    if (inputId === testId && inputPw === testPw) {
-      if (inputId.indexOf("@") === -1) {
-        alert("e-mail형식으로 입력해주세요");
-        return;
-      }
-      if (inputPw.length < 5) {
-        alert("pw를 5글자 이상 입력해주세요");
-        return;
-      }
-      alert("환영합니다.");
-      this.props.history.push("/mains");
-    }
+        if (data.MESSAGE === "SUCCESS") {
+          alert("환영합니다.");
+          this.props.history.push("/mains");
+        }
+      });
   };
 
   inputValue = (e) => {
@@ -53,7 +57,7 @@ class LoginS extends Component {
 
   changeBtnColor = () => {
     const { inputId, inputPw } = this.state;
-    inputId.indexOf("@") !== -1 && inputPw.length >= 5
+    inputId.includes("@") && inputPw.length >= 5
       ? this.setState({
           btnColor: "loginDisabled",
         })
@@ -62,11 +66,39 @@ class LoginS extends Component {
         });
   };
 
+  componentDidMount() {
+    fetch("http://localhost:3000/data/juyoungson/languageListData.json", {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          languageList: data,
+        });
+      });
+
+    fetch("http://localhost:3000/data/juyoungson/siteInfoData.json", {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          siteInfoList: data,
+        });
+      });
+  }
+
   render() {
     const { inputValue, checkInput } = this;
-    const { inputId, inputPw, btnColor } = this.state;
+    const {
+      inputId,
+      inputPw,
+      btnColor,
+      languageList,
+      siteInfoList,
+    } = this.state;
     return (
-      <section className="Login">
+      <section className="login">
         <main className="loginMain">
           <div className="loginMainContent">
             <h1>westagram</h1>
@@ -123,78 +155,23 @@ class LoginS extends Component {
 
         <footer>
           <ul className="siteInfo">
-            <li>
-              <Link to="#">소개</Link>
-            </li>
-            <li>
-              <Link to="#">블로그</Link>
-            </li>
-            <li>
-              <Link to="#">채용 정보</Link>
-            </li>
-            <li>
-              <Link to="#">도움말</Link>
-            </li>
-            <li>
-              <Link to="#">API</Link>
-            </li>
-            <li>
-              <Link to="#">개인정보처리방침</Link>
-            </li>
-            <li>
-              <Link to="#">약관</Link>
-            </li>
-            <li>
-              <Link to="#">인기 계정</Link>
-            </li>
-            <li>
-              <Link to="#">해시태그</Link>
-            </li>
-            <li>
-              <Link to="#">위치</Link>
-            </li>
+            {siteInfoList.map((siteInfo) => {
+              const { id, url, title } = siteInfo;
+              return (
+                <li key={id}>
+                  <Link to={url}>{title}</Link>
+                </li>
+              );
+            })}
           </ul>
-          <ul className="siteInfo">
-            <li>
-              <Link to="#">뷰티</Link>
-            </li>
-            <li>
-              <Link to="#">댄스 및 공연</Link>
-            </li>
-            <li>
-              <Link to="#">피트니스</Link>
-            </li>
-            <li>
-              <Link to="#">식음료</Link>
-            </li>
-            <li>
-              <Link to="#">집 및 정원</Link>
-            </li>
-            <li>
-              <Link to="#">음악</Link>
-            </li>
-            <li>
-              <Link to="#">시각 예술</Link>
-            </li>
-          </ul>
+
           <div className="selectLang">
             <div className="selectList">
               <select name="언어선택" id="">
-                <option value="af">Afrikaans</option>
-                <option value="cs">Čeština</option>
-                <option value="da">Dansk</option>
-                <option value="de">Deutsch</option>
-                <option value="el">Ελληνικά</option>
-                <option value="en">English</option>
-                <option value="en-gb">English (UK)</option>
-                <option value="es">Español (España)</option>
-                <option value="es-la">Español</option>
-                <option value="fi">Suomi</option>
-                <option value="fr">Français</option>
-                <option value="id">Bahasa Indonesia</option>
-                <option value="ko">한국어</option>
-                <option value="ja">日本語</option>
-                <option value="it">Italiano</option>
+                {languageList.map((lang) => {
+                  const { country, language, id } = lang;
+                  return <option key={id} value={country}>{language}</option>;
+                })}
               </select>
             </div>
 

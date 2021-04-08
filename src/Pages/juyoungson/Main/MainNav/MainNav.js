@@ -6,7 +6,7 @@ import "./MainNav.scss";
 class MainNav extends Component {
   render() {
     return (
-      <nav className="Nav">
+      <nav className="nav">
         <div className="navWrapper">
           <div className="navContentWrapper">
             <div className="logoBox">
@@ -31,7 +31,7 @@ class MainNav extends Component {
                     src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
                     alt="더보기"
                   />
-                  <img className="profileImg" src={juyoung} alt="로그인 계정 이미지"></img>
+                  <img className="profileImg" src={juyoung} alt="로그인 계정 이미지"/>
                 </div>
               </div>
             </div>

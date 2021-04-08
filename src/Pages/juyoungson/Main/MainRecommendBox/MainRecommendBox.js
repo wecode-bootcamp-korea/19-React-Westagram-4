@@ -6,7 +6,7 @@ import juyoung from "../../../../Images/juyoungson/juyoung.jpg";
 class MainRecommendBox extends Component {
     render() {
         return (
-            <aside className="MainRecommendBox">
+            <aside className="mainRecommendBox">
               <div className="recommendProfile">
                 <img className="profileImg" src={juyoung} alt="로그인 계정 이미지"></img>
                 <div className="profileName">

@@ -1,0 +1,77 @@
+[
+    {
+        "id": 1,
+        "country": "af",
+        "language": "Afrikaans"
+    },
+    {
+        "id": 2,
+        "country": "cs",
+        "language": "Čeština"
+    },
+    {
+        "id": 3,
+        "country": "da",
+        "language": "Dansk"
+    },
+    {
+        "id": 4,
+        "country": "de",
+        "language": "Deutsch"
+    },
+    {
+        "id": 5,
+        "country": "el",
+        "language": "Ελληνικά"
+    },
+    {
+        "id": 6,
+        "country": "en",
+        "language": "English"
+    },
+    {
+        "id": 7,
+        "country": "en-gb",
+        "language": "English (UK)"
+    },
+    {
+        "id": 8,
+        "country": "es",
+        "language": "Español (España)"
+    },
+    {
+        "id": 9,
+        "country": "es-la",
+        "language": "Español"
+    },
+    {
+        "id": 10,
+        "country": "fi",
+        "language": "Suomi"
+    },
+    {
+        "id": 11,
+        "country": "fr",
+        "language": "Français"
+    },
+    {
+        "id": 12,
+        "country": "id",
+        "language": "Bahasa Indonesia"
+    },
+    {
+        "id": 13,
+        "country": "ko",
+        "language": "한국어"
+    },
+    {
+        "id": 14,
+        "country": "ja",
+        "language": "日本語"
+    },
+    {
+        "id": 15,
+        "country": "it",
+        "language": "Italiano"
+    }
+]

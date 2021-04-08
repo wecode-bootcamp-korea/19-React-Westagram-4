@@ -1,7 +1,7 @@
 $mainColor: #fafafa;
 $mainborderColor: #c9c9c9;
 
-.Login {
+.login {
   @font-face {
         font-family: NanumL;
         src: url("../../../Styles/NanumSquareRoundL.ttf") format("truetype");
@@ -11,6 +11,7 @@ $mainborderColor: #c9c9c9;
   *{
     font-family: 'NanumL';
   }
+  
   height: 100vh;
   background-color: $mainColor;
 
@@ -30,11 +31,11 @@ $mainborderColor: #c9c9c9;
 
   .loginMain {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
-    margin-bottom: 25px;
     height: 85%;
+    margin-bottom: 25px;
 
     .loginMainContent {
       display: flex;
