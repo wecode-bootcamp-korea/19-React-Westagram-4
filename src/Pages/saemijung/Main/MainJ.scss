@@ -1,0 +1,22 @@
+$light-gray: #A2A2A2;
+  
+  .Main_container {
+
+    .main {
+      /* border:1px solid gray; */
+      height: 100vh;
+      margin-left: 280px;
+      margin-right: 280px;
+      padding-top: 54px;
+      position: relative;
+
+      .main_right {
+        border: 1px solid gray;
+        max-width: 293px;
+        width: 665px;
+        // position: fixed;
+        margin-left: 665px;
+        padding-left: 28px;
+      }
+    }  
+  }

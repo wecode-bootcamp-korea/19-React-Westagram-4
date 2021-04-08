@@ -1,0 +1,40 @@
+$light-gray: #A2A2A2;
+
+.story {
+    border: 1px solid $light-gray;
+    width: 585px;
+    height: 84px;
+    padding: 16px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-flow: row;
+
+        .story_list {
+            /* border:1px solid gray; */
+            width: 66px;
+            height: 86px;
+            padding: 4px;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+
+            .story_img {
+                width: 55px;
+                height: 55px;
+                border-radius: 70%;
+                overflow: hidden;
+            }
+
+            .user_name {
+                font-size: small;
+                color: black;
+            }
+        }
+    }
+}

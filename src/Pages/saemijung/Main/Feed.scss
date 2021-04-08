@@ -1,0 +1,135 @@
+@import "../../../Styles/Common.scss"; 
+
+$light-gray: #A2A2A2;
+
+.FEED {
+
+    .feeds {
+        width: 615px;
+        // height: 850px;
+        border: 1px solid $light-gray;
+        float: left;
+        margin-right: 28px;
+        margin-bottom: 60px;
+
+        .article {
+            border: 1px solid $light-gray;
+
+            .feed_top {
+                border: 1px solid $light-gray;
+                height: 20px;
+                padding: 16px;
+                display: flex;
+                align-items: center;
+
+                .feed_profile_img {
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 70%;
+                    overflow: hidden;
+                }
+                .feed_profile_name {
+                    font-size: small;
+                    font-weight: bolder;
+                    padding-left: 14px;
+                }
+            }
+
+            .feed_img_box {
+
+                .feed_img {
+                    width: 614px;
+                    height: 614px;
+                }
+            }
+        }
+
+        .left_box {
+            display: flex;
+            justify-content: space-between;
+
+            .btn_left {
+
+                .like {
+
+                    .icons {
+                        width: 30px;
+                        height: 30px;
+                        padding: 8px;
+                        background-color: white;
+                    }
+                }
+
+                .comment_icon {
+                    align-items: center;
+                    .icons {
+                        width: 30px;
+                        height: 30px;
+                        padding: 8px;
+                        background-color: white;
+                    }
+                }
+
+                .share {
+                    .icons {
+                        width: 30px;
+                        height: 30px;
+                        padding: 8px;
+                        background-color: white;
+                    }
+                }
+            }
+            .bookmark {
+                .icons {
+                    width: 30px;
+                    height: 30px;
+                    padding: 8px;
+                    background-color: white;
+                }
+            }
+        }
+        .before_comment {
+            padding: 8px;
+
+            .content_test {
+
+                .like_people {
+                    font-weight: bolder;
+                }
+            }
+
+            .content {
+
+                .comment {
+                    border: 1px solid black;
+                    // height: 100px;
+                    padding-left: 15px;
+                    ul {
+                        }
+                }
+            }
+        }
+    }
+}
+
+.comment_add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid $light-gray;
+    padding: 10px;
+
+    .comment_smile {
+        width: 22px;
+        height: 22px;
+    }
+    .comment_input {
+        width: 90%;
+        border: none;
+    }
+    .comment_btn {
+        background-color: white;
+        color: #B4E0FC;
+        font-weight: bold;
+    }
+}
