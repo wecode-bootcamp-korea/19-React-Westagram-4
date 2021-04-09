@@ -1,0 +1,26 @@
+[
+    {
+        "id" : 1,
+        "userName" : "juyoung",
+        "value" : "안녕안ㅇ녕",
+        "isLiked" : true
+    },
+    {
+        "id" : 2,
+        "userName" : "jisu",
+        "value" : "뚱땡아",
+        "isLiked" : true
+    },
+    {
+        "id" : 3,
+        "userName" : "chihyeon",
+        "value" : "조용히해",
+        "isLiked" : true
+    },
+    {
+        "id" : 4,
+        "userName" : "jiwon",
+        "value" : "ㅋㅋㅋㅋㅋㅋㅋ",
+        "isLiked" : true
+    }
+]

@@ -1,0 +1,31 @@
+$mainborderColor: #c9c9c9;
+
+.mainHead{
+    position: relative;
+    height: 118px;
+    width: 612px;
+    margin-bottom: 24px;
+    background-color: white;
+    border: 1px solid $mainborderColor;
+    overflow: hidden;
+
+    .headBox {
+        display: flex;
+        position: absolute;
+        margin: 16px 0;
+        li{
+            position: relative;
+            height: 84px;
+            width: 80px;
+
+            a{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                padding: 0 4px;
+            }
+        }
+
+    }
+    
+}
