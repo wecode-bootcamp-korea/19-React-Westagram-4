@@ -26,7 +26,7 @@ class FeedBox extends Component {
     return (
       feedBoxList.map((feed) => {
         return (
-        <article className="feedBox" key={feedBoxList.id}>
+        <article className="feedBox" key={feed.id}>
           <FeedHeader feedAccount = {feed.account}/>
           <FeedImgBox feedImg = {feed.img}/>
           <FeedIconBox />

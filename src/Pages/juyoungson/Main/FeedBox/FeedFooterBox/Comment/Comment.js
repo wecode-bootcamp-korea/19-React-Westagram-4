@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "./Comment.scss";
 
 class Comment extends Component {
@@ -17,11 +17,9 @@ class Comment extends Component {
       <div className="commentWrapper">
         {commentList.map((comment) => {
           const { id, userName, value, isLiked } = comment;
-          console.log(comment)
           return (
-
             <div className="commentBox" key={id}>
-              <div >
+              <div>
                 <Link to="/mains">{userName}</Link>
                 <span>{value}</span>
               </div>
