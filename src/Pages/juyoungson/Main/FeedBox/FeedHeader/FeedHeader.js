@@ -5,12 +5,12 @@ import juyoung from "../../../../../Images/juyoungson/juyoung.jpg";
 
 class FeedHeader extends Component {
   render() {
-    const { account } = this.props;
+    const { feedAccount } = this.props;
     return (
       <header className="feedHeader">
         <div className="feedLeftBox">
           <img src={juyoung} alt="로그인 계정 이미지"></img>
-          <Link to="/mains">{account}</Link>
+          <Link to="/mains">{feedAccount}</Link>
         </div>
         <div className="feedRightBox">
           <Link to="/mains">
