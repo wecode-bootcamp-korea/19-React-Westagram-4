@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import IMG from "./ImgData";
 import imgI from "../Images/instagram.png";
+
 import "./Nav.scss";
 
 class Nav extends Component {
@@ -25,12 +26,16 @@ class Nav extends Component {
           </div>
           <div className="right_box">
             {IMG.map((image) => {
-              console.log(image.imgSrc);
+              // console.log(image.imgSrc);
               return (
-                <img className="icons" src={image.imgSrc} alt={image.imgAlt} />
+                <img
+                  key={image.id}
+                  className="icons"
+                  src={image.imgSrc}
+                  alt={image.imgAlt}
+                />
               );
             })}
-            <img src="" alt="haha" />
             {/* <img className="icons" src={imgH} alt="집" />
             <img className="icons" src={imgD} alt="DM" />
             <img className="icons" src={imgE} alt="나침반" />

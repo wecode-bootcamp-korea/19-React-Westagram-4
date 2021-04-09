@@ -34,7 +34,7 @@ class LoginJ extends Component {
       .then((response) => response.json())
       .then((data) => {
         console.log("결과 :", data);
-        if (data["MESSAGE"] === "SUCESS") {
+        if (data["MESSAGE"] === "SUCCESS") {
           alert("로그인 성공!");
           this.props.history.push("/MainJ");
           localStorage.setItem("token", data.access_token);
