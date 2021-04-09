@@ -13,8 +13,7 @@ class LoginJ extends Component {
   }
 
   handleInput = (e) => {
-    const { className } = e.target;
-    const { value } = e.target;
+    const { className, value } = e.target;
 
     this.setState({
       [className]: value,
@@ -35,10 +34,10 @@ class LoginJ extends Component {
       .then((response) => response.json())
       .then((data) => {
         console.log("결과 :", data);
-        localStorage.setItem("token", data.access_token);
         if (data["MESSAGE"] === "SUCESS") {
           alert("로그인 성공!");
           this.props.history.push("/MainJ");
+          localStorage.setItem("token", data.access_token);
         } else {
           alert("로그인에 일치하지 않습니다!");
         }
@@ -53,10 +52,8 @@ class LoginJ extends Component {
   };
 
   render() {
-    // console.log(this.state.);
-    // console.log("btnColorState:" + this.state.btnColorState);
     return (
-      <div className="Login_container">
+      <div className="loginContainer">
         <div className="login_box">
           <div className="logo">
             <h1>westagram</h1>

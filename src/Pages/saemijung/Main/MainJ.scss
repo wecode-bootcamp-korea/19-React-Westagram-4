@@ -1,7 +1,7 @@
 $light-gray: #A2A2A2;
   
   .Main_container {
-
+    
     .main {
       /* border:1px solid gray; */
       height: 100vh;
@@ -10,6 +10,11 @@ $light-gray: #A2A2A2;
       padding-top: 54px;
       position: relative;
 
+      .feed_list{
+        display: flex;
+        flex-flow: column;
+      }
+
       .main_right {
         border: 1px solid gray;
         max-width: 293px;
@@ -17,6 +22,8 @@ $light-gray: #A2A2A2;
         // position: fixed;
         margin-left: 665px;
         padding-left: 28px;
+        position: fixed;
+        top:78px;
       }
     }  
   }

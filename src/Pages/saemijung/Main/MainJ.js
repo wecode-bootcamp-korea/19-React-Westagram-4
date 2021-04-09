@@ -60,9 +60,8 @@ class MainJ extends Component {
         <Nav />
         <section className="main">
           <Story />
-          <ul>
+          <ul className="feed_list">
             {this.state.FeedList.map((element) => {
-              console.log("state:" + this.state);
               return (
                 <Feed
                   key={element.id}

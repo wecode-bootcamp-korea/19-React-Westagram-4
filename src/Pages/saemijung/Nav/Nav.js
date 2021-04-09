@@ -1,14 +1,11 @@
 import React, { Component } from "react";
-import imgH from "../Images/home.png";
-import imgD from "../Images/dm.png";
-import imgE from "../Images/explore.png";
-import imgHeart from "../Images/heart.png";
-import imgP from "../Images/profile.png";
+import IMG from "./ImgData";
 import imgI from "../Images/instagram.png";
 import "./Nav.scss";
 
 class Nav extends Component {
   render() {
+    // console.log(this.state.imgList);
     return (
       <nav className="nav">
         <div className="top">
@@ -27,11 +24,18 @@ class Nav extends Component {
             </div>
           </div>
           <div className="right_box">
-            <img className="icons" src={imgH} alt="집" />
+            {IMG.map((image) => {
+              console.log(image.imgSrc);
+              return (
+                <img className="icons" src={image.imgSrc} alt={image.imgAlt} />
+              );
+            })}
+            <img src="" alt="haha" />
+            {/* <img className="icons" src={imgH} alt="집" />
             <img className="icons" src={imgD} alt="DM" />
             <img className="icons" src={imgE} alt="나침반" />
             <img className="icons" src={imgHeart} alt="하트" />
-            <img className="icons" src={imgP} alt="프로필 이미지" />
+            <img className="icons" src={imgP} alt="프로필 이미지" /> */}
           </div>
         </div>
       </nav>

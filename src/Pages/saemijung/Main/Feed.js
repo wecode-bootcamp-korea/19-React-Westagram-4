@@ -70,7 +70,6 @@ class Feed extends Component {
   };
 
   render() {
-    console.log("this prorps:" + this.props);
     return (
       <li id={this.props.key} className="FEED">
         <div className="feeds">
