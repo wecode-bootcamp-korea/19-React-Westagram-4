@@ -1,18 +1,8 @@
 import React from "react";
 import Feed from "./Feed/Feed";
-import _alesha98 from "../../../Images/danbipark/_alesha98.jpg";
-import assiaz13 from "../../../Images/danbipark/assiaz13.jpg";
-import bellyhadid from "../../../Images/danbipark/bellyhadid.jpg";
-import cest_kai from "../../../Images/danbipark/cest_kai.jpg";
+import StoriesContainer from "./StoriesContainer/StoriesContainer";
+import Recommendation from "./Recommendation/Recommendation";
 import itssweetrain from "../../../Images/danbipark/itssweetrain.jpg";
-import jianina_ from "../../../Images/danbipark/jianina_.jpg";
-import kimdaeun_02 from "../../../Images/danbipark/kimdaeun_02.jpg";
-import nakiaathome from "../../../Images/danbipark/nakiaathome.jpg";
-import onni_qa from "../../../Images/danbipark/onni_qa.jpg";
-import seongjun4957 from "../../../Images/danbipark/seongjun4957.jpg";
-import ssssssuin_ from "../../../Images/danbipark/ssssssuin_.jpg";
-import yesol_song from "../../../Images/danbipark/yesol_song.jpg";
-import ymch from "../../../Images/danbipark/ym.ch.jpg";
 import "./MainP.scss";
 import "../../../Styles/Common.scss";
 import "../../../Styles/Reset.scss";
@@ -20,22 +10,38 @@ import "../../../Styles/Reset.scss";
 class Main extends React.Component {
   state = {
     feedLists: [],
+    StoriesLists: [],
+    FriendsLists: [],
   };
 
   componentDidMount() {
-    fetch("http://localhost:3001/data/FeedData.json", {
-      method: "GET",
-    })
+    fetch("/data/FeedData.json")
       .then((res) => res.json())
       .then((data) => {
         this.setState({
           feedLists: data,
         });
       });
+
+    fetch("/data/StoriesData.json")
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          StoriesLists: data,
+        });
+      });
+
+    fetch("/data/Recommendation.json")
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          FriendsLists: data,
+        });
+      });
   }
 
   render() {
-    const { feedLists } = this.state;
+    const { feedLists, StoriesLists, FriendsLists } = this.state;
 
     return (
       <>
@@ -61,48 +67,16 @@ class Main extends React.Component {
           <div className="main-left-container">
             <header className="stories-container">
               <ul>
-                <li className="stories-content">
-                  <div className="img-border">
-                    <img src={ymch} alt="ya.ch" />
-                    <span>ya.ch</span>
-                  </div>
-                </li>
-                <li className="stories-content">
-                  <div className="img-border">
-                    <img src={yesol_song} alt="yemin_song" />
-                    <span>yemin_song</span>
-                  </div>
-                </li>
-                <li className="stories-content">
-                  <div className="img-border">
-                    <img src={jianina_} alt="jianima_" />
-                    <span>jianima_</span>
-                  </div>
-                </li>
-                <li className="stories-content">
-                  <div className="img-border">
-                    <img src={cest_kai} alt="cest_kei" />
-                    <span>cest_kei</span>
-                  </div>
-                </li>
-                <li className="stories-content">
-                  <div className="img-border">
-                    <img src={bellyhadid} alt="ballyhadid" />
-                    <span>ballyhadid</span>
-                  </div>
-                </li>
-                <li className="stories-content">
-                  <div className="img-border">
-                    <img src={_alesha98} alt="_alesha99" />
-                    <span>_alesha99</span>
-                  </div>
-                </li>
-                <li className="stories-content">
-                  <div className="img-border">
-                    <img src={ssssssuin_} alt="sssmin_" />
-                    <span>sssmin_</span>
-                  </div>
-                </li>
+                {StoriesLists.map((story) => {
+                  return (
+                    <StoriesContainer
+                      key={story.id}
+                      img={story.img}
+                      friendName={story.friendName}
+                    />
+                  );
+                })}
+                ;
               </ul>
             </header>
 
@@ -139,56 +113,15 @@ class Main extends React.Component {
                   <strong>회원님을 위한 추천</strong>
                 </div>
                 <ul>
-                  <li className="friends-info">
-                    <img src={nakiaathome} alt="nakiaathome" />
-                    <div className="friends-info-spec">
-                      <span>
-                        <strong>nakiaathome</strong>
-                      </span>
-                      <span className="add-info">회원님을 팔로우합니다</span>
-                    </div>
-                    <span>팔로우</span>
-                  </li>
-                  <li className="friends-info">
-                    <img src={onni_qa} alt="onni_qa" />
-                    <div className="friends-info-spec">
-                      <span>
-                        <strong>onni_qa</strong>
-                      </span>
-                      <span className="add-info">회원님을 위한 추천</span>
-                    </div>
-                    <span>팔로우</span>
-                  </li>
-                  <li className="friends-info">
-                    <img src={seongjun4957} alt="seongjun4957" />
-                    <div className="friends-info-spec">
-                      <span>
-                        <strong>seongjun4957</strong>
-                      </span>
-                      <span className="add-info">회원님을 위한 추천</span>
-                    </div>
-                    <span>팔로우</span>
-                  </li>
-                  <li className="friends-info">
-                    <img src={assiaz13} alt="assiaz13" />
-                    <div className="friends-info-spec">
-                      <span>
-                        <strong>assiiaz13</strong>
-                      </span>
-                      <span className="add-info">회원님을 위한 추천</span>
-                    </div>
-                    <span>팔로우</span>
-                  </li>
-                  <li className="friends-info">
-                    <img src={kimdaeun_02} alt="kimdaeun_02" />
-                    <div className="friends-info-spec">
-                      <span>
-                        <strong>kimdaeun_02</strong>
-                      </span>
-                      <span className="add-info">회원님을 위한 추천</span>
-                    </div>
-                    <span>팔로우</span>
-                  </li>
+                  {FriendsLists.map((friend) => {
+                    return (
+                      <Recommendation
+                        key={friend.id}
+                        img={friend.img}
+                        name={friend.name}
+                      />
+                    );
+                  })}
                 </ul>
               </div>
             </aside>

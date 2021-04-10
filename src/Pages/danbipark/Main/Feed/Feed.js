@@ -7,17 +7,23 @@ class Feed extends Component {
     userCommentLists: [],
   };
 
-  componentDidMount() {
-    fetch("http://localhost:3001/data/CommentData.json", {
-      method: "GET",
+  saveData = () => {
+    const { userComment } = this.state;
+    fetch("http://10.58.7.14:8000/postings/comment", {
+      method: "POST",
+      body: JSON.stringify({
+        id: 1,
+        content: userComment,
+        friend: "danbi",
+      }),
     })
       .then((res) => res.json())
-      .then((data) => {
+      .then((res) => {
         this.setState({
-          userCommentLists: data,
+          userCommentLists: res.result,
         });
       });
-  }
+  };
 
   createText = (e) => {
     this.setState({
@@ -44,11 +50,13 @@ class Feed extends Component {
 
   handleClick = (e) => {
     this.addText();
+    this.saveData();
   };
 
   handleEnter = (e) => {
     if (e.key === "Enter") {
       this.addText();
+      this.saveData();
     }
   };
 

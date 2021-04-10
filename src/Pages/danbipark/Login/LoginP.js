@@ -11,23 +11,20 @@ class Login extends React.Component {
   };
 
   checkValidation = () => {
-    fetch("http://10.58.5.51:8000/user/signin", {
+    const { loginId, loginPw } = this.state;
+    fetch("/users/login", {
       method: "POST",
       body: JSON.stringify({
-        email: "hykim10@nate.com",
-        password: "rlagus0000",
-        name: "joon",
+        account: loginId,
+        password: loginPw,
       }),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data["MESSAGE"] === "SUCCESS") {
+      .then((res) => {
+        if (res.access_token) {
+          localStorage.setItem("access_token", res.access_token);
           alert("Westagram 환영합니다");
           this.props.history.push("/MainP");
-        }
-        if (data["MESSAGE"] === "ALREADY_EXISTS_EMAIL") {
-          alert("중복된 아이디와 비밀번호입니다.");
         }
       });
   };
@@ -42,7 +39,7 @@ class Login extends React.Component {
   checkLogin = () => {
     const { loginId, loginPw } = this.state;
     this.setState({
-      IsDisabled: loginPw.length >= 5 && loginId.includes("@") ? false : true,
+      IsDisabled: !(loginPw.length >= 5 && loginId.includes("@")),
     });
   };
 
